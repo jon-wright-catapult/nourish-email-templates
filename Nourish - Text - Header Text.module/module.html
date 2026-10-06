@@ -1,0 +1,55 @@
+{#
+  Header text email module
+  Line height is derived from font size (+2px), so it isn't a separate field.
+#}
+
+{% set section_bg   = module.section_bg.color or "#3e4681" %}
+{% set sec_top      = module.section_padding_top|int %}
+{% set sec_bottom   = module.section_padding_bottom|int %}
+
+{% set tp           = module.text_padding %}
+{% set pad_top      = tp.top|int %}
+{% set pad_right    = tp.right|int %}
+{% set pad_bottom   = tp.bottom|int %}
+{% set pad_left     = tp.left|int %}
+
+{% set text_color   = module.text_color.color or "#ffffff" %}
+{% set font_size    = module.font_size|int or 40 %}
+{% set line_height  = font_size + 2 %}
+{% set align        = module.text_align or "left" %}
+
+<!-- SECTION START - Header text -->
+<!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" bgcolor="{{ section_bg }}" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+<div style="background:{{ section_bg }};background-color:{{ section_bg }};margin:0px auto;max-width:600px;">
+  <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:{{ section_bg }};background-color:{{ section_bg }};width:100%;">
+    <tbody>
+      <tr>
+        <td style="direction:ltr;font-size:0px;padding:{{ sec_top }}px 20px {{ sec_bottom }}px;text-align:center;">
+          <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:560px;" ><![endif]-->
+          <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+            <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+              <tbody>
+                <tr>
+                  <td style="vertical-align:top;padding:0px;">
+                    <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
+                      <tbody>
+                        <tr>
+                          <td align="{{ align }}" style="font-size:0px;padding:{{ pad_top }}px {{ pad_right }}px {{ pad_bottom }}px {{ pad_left }}px;word-break:break-word;">
+                            <div style="font-family:FS Me, Arial;font-size:{{ font_size }}px;font-weight:700;line-height:{{ line_height }}px;mso-line-height-rule:exactly;text-align:{{ align }};color:{{ text_color }};">{{ module.heading_text|escape }}</div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]-->
+<!-- SECTION END - Header text -->

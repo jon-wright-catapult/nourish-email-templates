@@ -1,0 +1,224 @@
+[ {
+  "id" : "296c1c1e-e25c-e63e-66f0-5fea0554edd4",
+  "name" : "wrapper_bg_color",
+  "label" : "Wrapper background color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#FFFFFF",
+    "opacity" : 100
+  }
+}, {
+  "id" : "0e0f9904-ed3f-115f-2f7c-a50954ae2fa0",
+  "name" : "section_bg_color",
+  "label" : "Section background color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#e0f5f5",
+    "opacity" : 100
+  }
+}, {
+  "id" : "eef972ba-f247-f212-27ff-23d933da5696",
+  "name" : "section_border_color",
+  "label" : "Section border color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#66cccc",
+    "opacity" : 100
+  }
+}, {
+  "id" : "8a8c9529-1584-beb2-4c2c-e07738e7fbbb",
+  "name" : "alignment",
+  "label" : "Speaker Alignment",
+  "help_text" : "Controls how speakers are positioned within each row when there are fewer than 4 in that row.",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "left", "Left" ], [ "center", "Center" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null
+}, {
+  "id" : "2e59a380-d8a7-d98b-df92-94b7641a70ba",
+  "name" : "speaker_text_color",
+  "label" : "Speaker Text Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : null,
+    "opacity" : null
+  }
+}, {
+  "id" : "827ab457-4549-43e6-1448-752a0eb5fb9c",
+  "name" : "speakers",
+  "label" : "Speakers",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 12,
+    "sorting_label_field" : "850131d7-4d57-bf35-ace3-91d7c8188f4a",
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "fac99990-f074-905c-728d-f6d8e80cacac",
+    "name" : "photo",
+    "label" : "Photo",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "db9627fc-80fb-c50e-aa50-23641c4bc918",
+    "name" : "first_name",
+    "label" : "First Name",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "850131d7-4d57-bf35-ace3-91d7c8188f4a",
+    "name" : "last_name",
+    "label" : "Last Name",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "e1896b1a-33d3-ab5a-91bd-9ac3007ada30",
+    "name" : "job_title",
+    "label" : "Job Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "e7787b05-756d-3b42-637c-c9f9c2a783f3",
+    "name" : "company_display_type",
+    "label" : "Company Display",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "logo", "Logo" ], [ "text", "Text" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "text"
+  }, {
+    "id" : "2198edc3-bf90-1900-2b68-ffac20b19fba",
+    "name" : "company_logo",
+    "label" : "Company Logo",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "speakers.company_display_type",
+      "controlling_value_regex" : "logo",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "54265c15-a1c7-fd62-af89-6b4c225ae99e",
+    "name" : "company_name",
+    "label" : "Company Name",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "speakers.company_display_type",
+      "controlling_value_regex" : "text",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Company Name"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "photo" : {
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "company_display_type" : "text",
+    "company_logo" : {
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "company_name" : "Company Name"
+  } ]
+}, {
+  "id" : "fbd25ce9-3ef4-e1f1-e560-e98891d59f18",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "b4e3c77e-3450-06d8-1f35-b8fdc5fb81e0",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#3e4681",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "background_color" : {
+      "color" : "#3e4681",
+      "opacity" : 100
+    }
+  }
+} ]

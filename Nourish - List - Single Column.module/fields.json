@@ -1,0 +1,80 @@
+[ {
+  "id" : "21bfcfb3-d11b-d228-b24f-eab745e541b1",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "2cfdb6f0-c0a6-bf32-6ea5-6ef7b1225ca6",
+    "name" : "background_color",
+    "label" : "Background color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#004038",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "7c56bdd3-6433-09f6-6f74-d62ecda7a02e",
+    "name" : "text_color",
+    "label" : "Text color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#FFFFFF",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "8d2ae7a6-e32b-e374-8b4f-7347824d359f",
+    "name" : "bottom_border_color",
+    "label" : "Bottom Border color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ecedee",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "background_color" : {
+      "color" : "#004038",
+      "opacity" : 100
+    },
+    "text_color" : {
+      "color" : "#FFFFFF",
+      "opacity" : 100
+    },
+    "bottom_border_color" : {
+      "color" : "#ecedee",
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "05792958-21cb-4db0-5341-7add8f99ffcc",
+  "name" : "list_item",
+  "label" : "List Item",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "placeholder" : "Example list item",
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Example list item"
+} ]

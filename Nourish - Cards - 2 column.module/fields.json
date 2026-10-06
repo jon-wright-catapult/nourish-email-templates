@@ -1,0 +1,294 @@
+[ {
+  "id" : "c3d2b000-0000-4000-8000-000000000001",
+  "name" : "wrapper_bg_color",
+  "label" : "Wrapper background color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#ffffff",
+    "opacity" : 100
+  }
+}, {
+  "id" : "c3d2b000-0000-4000-8000-000000000002",
+  "name" : "wrapper_padding_top",
+  "label" : "Wrapper padding top (px)",
+  "required" : false,
+  "locked" : false,
+  "display" : "slider",
+  "min" : 0,
+  "max" : 100,
+  "step" : 1,
+  "type" : "number",
+  "display_width" : null,
+  "default" : 10
+}, {
+  "id" : "c3d2b000-0000-4000-8000-000000000003",
+  "name" : "wrapper_padding_bottom",
+  "label" : "Wrapper padding bottom (px)",
+  "required" : false,
+  "locked" : false,
+  "display" : "slider",
+  "min" : 0,
+  "max" : 100,
+  "step" : 1,
+  "type" : "number",
+  "display_width" : null,
+  "default" : 20
+}, {
+  "id" : "c3d2b000-0000-4000-8000-000000000004",
+  "name" : "card_bg_color",
+  "label" : "Card background color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#ECEDF2",
+    "opacity" : 100
+  }
+}, {
+  "id" : "c3d2b000-0000-4000-8000-000000000005",
+  "name" : "card_border_color",
+  "label" : "Card border color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#3e4681",
+    "opacity" : 100
+  }
+}, {
+  "id" : "c3d2b000-0000-4000-8000-000000000006",
+  "name" : "columns",
+  "label" : "Columns",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 2,
+    "max" : 2,
+    "sorting_label_field" : "columns.button_cta_text",
+    "default" : 2
+  },
+  "children" : [ {
+    "id" : "c3d2b000-0000-4000-8000-000000000007",
+    "name" : "show_image",
+    "label" : "Show image",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "c3d2b000-0000-4000-8000-000000000008",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "columns.show_image",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "https://149327226.hs-sites-eu1.com/hs-fs/hubfs/clare-wildfire-nourish-3e4681.png?width=264&upscale=true&name=clare-wildfire-nourish-3e4681.png",
+      "alt" : "",
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "c3d2b000-0000-4000-8000-000000000009",
+    "name" : "show_rich_text",
+    "label" : "Show text",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "c3d2b000-0000-4000-8000-000000000010",
+    "name" : "rich_text",
+    "label" : "Rich text",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "columns.show_rich_text",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p><span style=\"font-size:18px;font-weight:600\">Highlighted speaker</span></p><p>We will explore how place-based leadership, strategic investment, and partnerships with high-potential businesses can unlock long-term prosperity</p>"
+  }, {
+    "id" : "c3d2b000-0000-4000-8000-000000000011",
+    "name" : "show_button",
+    "label" : "Show button",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "c3d2b000-0000-4000-8000-000000000012",
+    "name" : "button_cta_text",
+    "label" : "Button CTA text",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "columns.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Save your place"
+  }, {
+    "id" : "c3d2b000-0000-4000-8000-000000000013",
+    "name" : "button_url",
+    "label" : "Button URL",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "columns.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : "https://nourishcare.com/"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "c3d2b000-0000-4000-8000-000000000014",
+    "name" : "button_bg_color",
+    "label" : "Button background color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "columns.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "c3d2b000-0000-4000-8000-000000000015",
+    "name" : "button_border_color",
+    "label" : "Button border color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "columns.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "show_image" : true,
+    "image" : {
+      "src" : "https://149327226.hs-sites-eu1.com/hs-fs/hubfs/clare-wildfire-nourish-3e4681.png?width=264&upscale=true&name=clare-wildfire-nourish-3e4681.png",
+      "alt" : "",
+      "loading" : "disabled"
+    },
+    "show_rich_text" : true,
+    "rich_text" : "<p><span style=\"font-size:18px;font-weight:600\">Highlighted speaker</span></p><p>We will explore how place-based leadership, strategic investment, and partnerships with high-potential businesses can unlock long-term prosperity</p>",
+    "show_button" : true,
+    "button_cta_text" : "Save your place",
+    "button_url" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : "https://nourishcare.com/"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    },
+    "button_bg_color" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    },
+    "button_border_color" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    }
+  }, {
+    "show_image" : true,
+    "image" : {
+      "src" : "https://149327226.hs-sites-eu1.com/hs-fs/hubfs/clare-wildfire-nourish-3e4681.png?width=264&upscale=true&name=clare-wildfire-nourish-3e4681.png",
+      "alt" : "",
+      "loading" : "disabled"
+    },
+    "show_rich_text" : true,
+    "rich_text" : "<p><span style=\"font-size:18px;font-weight:600\">Highlighted speaker</span></p><p>We will explore how place-based leadership, strategic investment, and partnerships with high-potential businesses can unlock long-term prosperity</p>",
+    "show_button" : true,
+    "button_cta_text" : "Save your place",
+    "button_url" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : "https://nourishcare.com/"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    },
+    "button_bg_color" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    },
+    "button_border_color" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    }
+  } ]
+} ]

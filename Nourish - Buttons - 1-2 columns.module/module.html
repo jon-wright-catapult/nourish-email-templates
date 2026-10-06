@@ -1,0 +1,86 @@
+{#
+  Buttons (1–2 col) email module
+  Layout is driven by the number of repeater items; the lookup below
+  swaps in the MJML column class, Outlook ghost-table width and button sizing.
+#}
+
+{# ---------- Layout lookup (index = number of buttons - 1) ---------- #}
+{% set layouts = [
+  { "col_class": "mj-column-per-100", "mso_col_width": 580, "button_width": 240 },
+  { "col_class": "mj-column-per-50",  "mso_col_width": 290, "button_width": 240 }
+] %}
+
+{% set buttons      = module.buttons %}
+{% set count        = buttons|length %}
+{% set border_width = 1 %}   {# px – included in the button's total width #}
+{% set pad_x        = 25 %}  {# px – left/right padding inside the button #}
+
+{% if count > 0 %}
+  {% set layout = layouts[count - 1] if count <= layouts|length else layouts|last %}
+  {% set section_bg = module.section_bg.color or "#3e4681" %}
+  {% set pad_top    = module.padding_top|int %}
+  {% set pad_bottom = module.padding_bottom|int %}
+  {# anchor width = total button width − horizontal padding − borders #}
+  {% set link_width = layout.button_width - (pad_x * 2) - (border_width * 2) %}
+
+<!-- SECTION START - {{ count }} col buttons -->
+<!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" bgcolor="{{ section_bg }}" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+<div style="background:{{ section_bg }};background-color:{{ section_bg }};margin:0px auto;max-width:600px;">
+  <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:{{ section_bg }};background-color:{{ section_bg }};width:100%;">
+    <tbody>
+      <tr>
+        <td style="direction:ltr;font-size:0px;padding:{{ pad_top }}px 10px {{ pad_bottom }}px;text-align:center;">
+          <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><![endif]-->
+
+          {% for button in buttons %}
+            {% if loop.index <= layouts|length %}
+              {% set btn_bg     = button.button_bg.color or "#66cccc" %}
+              {% set btn_border = button.button_border.color or btn_bg %}
+              {% set btn_text   = button.button_text_color.color or "#ffffff" %}
+              {% set btn_href   = button.button_url.href or "#" %}
+              {% set btn_align  = button.button_alignment %}
+
+          <!-- Start Column -->
+          <!--[if mso | IE]><td class="" style="vertical-align:top;width:{{ layout.mso_col_width }}px;" ><![endif]-->
+          <div class="{{ layout.col_class }} mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+            <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+              <tbody>
+                <tr>
+                  <td style="vertical-align:top;padding:10px 20px 0px 20px;">
+                    <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
+                      <tbody>
+                        <tr>
+                          <td align="{{ btn_align }}" style="font-size:0px;padding:0px;word-break:break-word;">
+                            <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;width:{{ layout.button_width }}px;line-height:100%;">
+                              <tbody>
+                                <tr>
+                                  <td align="center" bgcolor="{{ btn_bg }}" role="presentation" style="border:{{ border_width }}px solid {{ btn_border }};border-radius:50px;cursor:auto;mso-padding-alt:10px {{ pad_x }}px;background:{{ btn_bg }};" valign="middle">
+                                    <a href="{{ btn_href }}" style="display:inline-block;width:{{ link_width }}px;background:{{ btn_bg }};color:{{ btn_text }};font-family:FS Me, Arial;font-size:14px;font-weight:normal;line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:10px {{ pad_x }}px;mso-padding-alt:0px;border-radius:50px;" target="_blank"> {{ button.cta_text|escape }} </a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--[if mso | IE]></td><![endif]-->
+          <!-- End Column -->
+
+            {% endif %}
+          {% endfor %}
+
+          <!--[if mso | IE]></tr></table><![endif]-->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]-->
+<!-- SECTION END - {{ count }} col buttons -->
+{% endif %}

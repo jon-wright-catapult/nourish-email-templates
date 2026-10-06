@@ -1,0 +1,161 @@
+[ {
+  "id" : "padding_top",
+  "name" : "padding_top",
+  "label" : "Section padding top",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 0,
+  "max" : 100,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 10
+}, {
+  "id" : "padding_bottom",
+  "name" : "padding_bottom",
+  "label" : "Section padding bottom",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 0,
+  "max" : 100,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 10
+}, {
+  "id" : "bg_color",
+  "name" : "bg_color",
+  "label" : "Section background color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#172b34",
+    "opacity" : 100
+  }
+}, {
+  "id" : "logo",
+  "name" : "logo",
+  "label" : "Logo",
+  "required" : false,
+  "locked" : false,
+  "responsive" : false,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "src" : "https://149327226.fs1.hubspotusercontent-eu1.net/hub/149327226/hubfs/nourish-logo-white.png?width=400&upscale=true&name=nourish-logo-white.png",
+    "alt" : ""
+  }
+}, {
+  "id" : "nav_items",
+  "name" : "nav_items",
+  "label" : "Nav links",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 4,
+    "sorting_label_field" : "nav_items.link_text",
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "nav_items.link_text",
+    "name" : "link_text",
+    "label" : "Link text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Link"
+  }, {
+    "id" : "nav_items.link_url",
+    "name" : "link_url",
+    "label" : "Link URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "EMAIL_ADDRESS" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "id" : "nav_items.text_color",
+    "name" : "text_color",
+    "label" : "Text color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "nav_items.text_decoration",
+    "name" : "text_decoration",
+    "label" : "Text decoration",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "none", "None" ], [ "underline", "Underline" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "none"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "link_text" : "Agenda",
+    "link_url" : {
+      "content_id" : null,
+      "href" : "https://mjml.io/gettings-started-onboard",
+      "type" : "EXTERNAL"
+    },
+    "text_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "text_decoration" : "none"
+  }, {
+    "link_text" : "Speakers",
+    "link_url" : {
+      "content_id" : null,
+      "href" : "https://mjml.io/try-it-live",
+      "type" : "EXTERNAL"
+    },
+    "text_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "text_decoration" : "none"
+  }, {
+    "link_text" : "Register",
+    "link_url" : {
+      "content_id" : null,
+      "href" : "https://mjml.io/templates",
+      "type" : "EXTERNAL"
+    },
+    "text_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "text_decoration" : "none"
+  } ]
+} ]

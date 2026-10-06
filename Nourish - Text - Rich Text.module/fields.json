@@ -1,0 +1,163 @@
+[ {
+  "id" : "section_bg",
+  "name" : "section_bg",
+  "label" : "Section background color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#3e4681",
+    "opacity" : 100
+  }
+}, {
+  "id" : "b93bc254-6673-86a6-a0ee-b0c7325533c5",
+  "name" : "section_text",
+  "label" : "Section Text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null
+}, {
+  "id" : "section_padding_top",
+  "name" : "section_padding_top",
+  "label" : "Section top padding",
+  "required" : false,
+  "locked" : false,
+  "display" : "slider",
+  "min" : 0,
+  "max" : 100,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 0
+}, {
+  "id" : "section_padding_bottom",
+  "name" : "section_padding_bottom",
+  "label" : "Section bottom padding",
+  "required" : false,
+  "locked" : false,
+  "display" : "slider",
+  "min" : 0,
+  "max" : 100,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 0
+}, {
+  "id" : "text_padding",
+  "name" : "text_padding",
+  "label" : "Text padding",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "text_padding.top",
+    "name" : "top",
+    "label" : "Top",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 17
+  }, {
+    "id" : "text_padding.right",
+    "name" : "right",
+    "label" : "Right",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 0
+  }, {
+    "id" : "text_padding.bottom",
+    "name" : "bottom",
+    "label" : "Bottom",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 17
+  }, {
+    "id" : "text_padding.left",
+    "name" : "left",
+    "label" : "Left",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 10
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "top" : 17,
+    "right" : 0,
+    "bottom" : 17,
+    "left" : 10
+  }
+}, {
+  "id" : "text_color",
+  "name" : "text_color",
+  "label" : "Text color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#ffffff",
+    "opacity" : 100
+  }
+}, {
+  "id" : "font_size",
+  "name" : "font_size",
+  "label" : "Font size",
+  "required" : false,
+  "locked" : false,
+  "display" : "slider",
+  "min" : 10,
+  "max" : 72,
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 14
+}, {
+  "id" : "text_align",
+  "name" : "text_align",
+  "label" : "Text alignment",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "left"
+} ]

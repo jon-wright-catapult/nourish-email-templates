@@ -1,0 +1,138 @@
+[ {
+  "id" : "wrapper_bg",
+  "name" : "wrapper_bg",
+  "label" : "Wrapper background color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#ffffff",
+    "opacity" : 100
+  }
+}, {
+  "id" : "section_bg",
+  "name" : "section_bg",
+  "label" : "Section (card) background color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#E0F5F5",
+    "opacity" : 100
+  }
+}, {
+  "id" : "section_border",
+  "name" : "section_border",
+  "label" : "Section (card) border color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#66CCCC",
+    "opacity" : 100
+  }
+}, {
+  "id" : "card_text",
+  "name" : "card_text",
+  "label" : "Card text",
+  "required" : true,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<span style=\"font-size:18px;font-weight:600\">Get your virtual ticket</span><br /> Watch all of these sessions, network with other attendees and get access to the content on-demand. Register today."
+}, {
+  "id" : "button",
+  "name" : "button",
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "button.cta_text",
+    "name" : "cta_text",
+    "label" : "Button CTA",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Save your place"
+  }, {
+    "id" : "button.button_url",
+    "name" : "button_url",
+    "label" : "Button URL",
+    "required" : true,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : "https://nourishcare.com/"
+    }
+  }, {
+    "id" : "button.button_bg",
+    "name" : "button_bg",
+    "label" : "Button background color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "button.button_border",
+    "name" : "button_border",
+    "label" : "Button border color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "button.button_text_color",
+    "name" : "button_text_color",
+    "label" : "Button text color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : true,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "cta_text" : "Save your place",
+    "button_url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : "https://nourishcare.com/"
+    },
+    "button_bg" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    },
+    "button_border" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    },
+    "button_text_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }
+} ]

@@ -1,0 +1,339 @@
+[ {
+  "id" : "b2c1a000-0000-4000-8000-000000000001",
+  "name" : "wrapper_bg_color",
+  "label" : "Wrapper background color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#ffffff",
+    "opacity" : 100
+  }
+}, {
+  "id" : "b2c1a000-0000-4000-8000-000000000002",
+  "name" : "wrapper_padding_top",
+  "label" : "Wrapper padding top (px)",
+  "required" : false,
+  "locked" : false,
+  "display" : "slider",
+  "min" : 0,
+  "max" : 100,
+  "step" : 1,
+  "type" : "number",
+  "display_width" : null,
+  "default" : 10
+}, {
+  "id" : "b2c1a000-0000-4000-8000-000000000003",
+  "name" : "wrapper_padding_bottom",
+  "label" : "Wrapper padding bottom (px)",
+  "required" : false,
+  "locked" : false,
+  "display" : "slider",
+  "min" : 0,
+  "max" : 100,
+  "step" : 1,
+  "type" : "number",
+  "display_width" : null,
+  "default" : 10
+}, {
+  "id" : "b2c1a000-0000-4000-8000-000000000004",
+  "name" : "items",
+  "label" : "Cards (1-3)",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 3,
+    "sorting_label_field" : "items.button_cta_text",
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "b2c1a000-0000-4000-8000-000000000005",
+    "name" : "section_bg_color",
+    "label" : "Section/column background color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#E0F5F5",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "b2c1a000-0000-4000-8000-000000000006",
+    "name" : "section_border_color",
+    "label" : "Section/column border color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#66CCCC",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "b2c1a000-0000-4000-8000-000000000007",
+    "name" : "show_rich_text_top",
+    "label" : "Show top text",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "b2c1a000-0000-4000-8000-000000000008",
+    "name" : "rich_text_top",
+    "label" : "Card rich text (top)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_rich_text_top",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p><span style=\"font-size:18px;font-weight:600\">The role of civic and business leadership in unlocking connectivity and growth in city regions</span></p><p>We will explore how place-based leadership, strategic investment, and partnerships with high-potential businesses can unlock long-term prosperity</p>"
+  }, {
+    "id" : "b2c1a000-0000-4000-8000-000000000009",
+    "name" : "show_image",
+    "label" : "Show image",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "b2c1a000-0000-4000-8000-000000000010",
+    "name" : "image",
+    "label" : "Card image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_image",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "https://summit.cp.catapult.org.uk/hubfs/summit-2026-keynote-day-1-session-2.png",
+      "alt" : "",
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "b2c1a000-0000-4000-8000-000000000018",
+    "name" : "image_width",
+    "label" : "Card image width (px, max 488 — auto-capped to 228 for 2 cards, 137 for 3)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_image",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "slider",
+    "min" : 20,
+    "max" : 488,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 488
+  }, {
+    "id" : "b2c1a000-0000-4000-8000-000000000011",
+    "name" : "show_rich_text_bottom",
+    "label" : "Show bottom text",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "b2c1a000-0000-4000-8000-000000000012",
+    "name" : "rich_text_bottom",
+    "label" : "Card rich text (bottom)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_rich_text_bottom",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>Watch all of these sessions, network with other attendees and get access to the content on-demand. Register today.</p>"
+  }, {
+    "id" : "b2c1a000-0000-4000-8000-000000000013",
+    "name" : "show_button",
+    "label" : "Show button",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "b2c1a000-0000-4000-8000-000000000014",
+    "name" : "button_cta_text",
+    "label" : "Card button CTA text",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Register"
+  }, {
+    "id" : "b2c1a000-0000-4000-8000-000000000015",
+    "name" : "button_url",
+    "label" : "Card button URL",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : "https://nourishcare.com/"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "b2c1a000-0000-4000-8000-000000000016",
+    "name" : "button_bg_color",
+    "label" : "Card button background color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "b2c1a000-0000-4000-8000-000000000017",
+    "name" : "button_border_color",
+    "label" : "Card button border color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#0A1414",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "5084368b-25df-1018-56aa-b64ebd806a55",
+    "name" : "image_alignment",
+    "label" : "Image alignment",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "placeholder" : "left",
+    "choices" : [ [ "left", "left" ], [ "center", "center" ], [ "right", "right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "section_bg_color" : {
+      "color" : "#E0F5F5",
+      "opacity" : 100
+    },
+    "section_border_color" : {
+      "color" : "#66CCCC",
+      "opacity" : 100
+    },
+    "show_rich_text_top" : true,
+    "rich_text_top" : "<p><span style=\"font-size:18px;font-weight:600\">The role of civic and business leadership in unlocking connectivity and growth in city regions</span></p><p>We will explore how place-based leadership, strategic investment, and partnerships with high-potential businesses can unlock long-term prosperity</p>",
+    "show_image" : true,
+    "image" : {
+      "src" : "https://summit.cp.catapult.org.uk/hubfs/summit-2026-keynote-day-1-session-2.png",
+      "alt" : "",
+      "loading" : "disabled"
+    },
+    "image_width" : 488,
+    "show_rich_text_bottom" : true,
+    "rich_text_bottom" : "<p>Watch all of these sessions, network with other attendees and get access to the content on-demand. Register today.</p>",
+    "show_button" : true,
+    "button_cta_text" : "Register",
+    "button_url" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : "https://nourishcare.com/"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    },
+    "button_bg_color" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    },
+    "button_border_color" : {
+      "color" : "#0A1414",
+      "opacity" : 100
+    }
+  } ]
+} ]

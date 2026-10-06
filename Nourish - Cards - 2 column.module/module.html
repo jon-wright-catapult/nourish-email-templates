@@ -1,0 +1,99 @@
+{% set wrapper_bg = module.wrapper_bg_color.color %}
+{% set pad_top = module.wrapper_padding_top %}
+{% set pad_bottom = module.wrapper_padding_bottom %}
+{% set card_bg = module.card_bg_color.color %}
+{% set card_border = module.card_border_color.color %}
+{% set img_width = 200 %}
+{% set btn_table_width = 200 %}
+{% set btn_anchor_width = 150 %}
+
+<!-- SECTION START - 1 Card - 2 col -->
+<!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" bgcolor="{{ wrapper_bg }}"><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+<div style="background:{{ wrapper_bg }};background-color:{{ wrapper_bg }};margin:0px auto;max-width:600px;">
+  <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:{{ wrapper_bg }};background-color:{{ wrapper_bg }};width:100%;">
+    <tbody>
+      <tr>
+        <td style="direction:ltr;font-size:0px;padding:{{ pad_top }}px 30px {{ pad_bottom }}px 30px;text-align:center;">
+          <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" width="600px" ><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:540px;" width="540" bgcolor="{{ card_bg }}" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+          <div style="background:{{ card_bg }};background-color:{{ card_bg }};margin:0px auto;max-width:540px;border-radius:20px;overflow:hidden;">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:{{ card_bg }};background-color:{{ card_bg }};width:100%;border-collapse:separate;">
+              <tbody>
+                <tr>
+                  <td style="border:1px solid {{ card_border }};border-radius:20px;direction:ltr;font-size:0px;padding:5px;text-align:center;">
+
+{% for column in module.columns %}
+{% if loop.first %}
+                    <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:middle;width:264px;" ><![endif]-->
+{% else %}
+                    <!--[if mso | IE]></td><td class="" style="vertical-align:middle;width:264px;" ><![endif]-->
+{% endif %}
+                    <div class="mj-column-per-50 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:middle;width:100%;">
+                      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="border-collapse:separate;">
+                        <tbody>
+                          <tr>
+                            <td style="background-color:{{ card_bg }};border-radius:0px;vertical-align:middle;border-collapse:separate;padding:20px 20px;">
+                              <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
+                                <tbody>
+
+{% if column.show_image and column.image.src %}
+                                  <tr>
+                                    <td align="center" style="font-size:0px;padding:0px;word-break:break-word;">
+                                      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;">
+                                        <tbody>
+                                          <tr>
+                                            <td style="width:{{ img_width }}px;">
+                                              <img alt="{{ column.image.alt|escape_attr }}" src="{{ column.image.src }}" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:14px;" width="{{ img_width }}" height="auto" />
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+{% endif %}
+{% if column.show_rich_text %}
+                                  <tr>
+                                    <td align="left" style="font-size:0px;padding:0px;padding-top:10px;word-break:break-word;">
+                                      <div style="font-family:FS Me, Arial;font-size:14px;font-weight:300;line-height:20px;text-align:left;color:#000000;">{{ column.rich_text }}</div>
+                                    </td>
+                                  </tr>
+{% endif %}
+{% if column.show_button %}
+                                  <tr>
+                                    <td align="center" style="font-size:0px;padding:10px 0px;word-break:break-word;">
+                                      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;width:{{ btn_table_width }}px;line-height:100%;">
+                                        <tbody>
+                                          <tr>
+                                            <td align="center" bgcolor="{{ column.button_bg_color.color }}" role="presentation" style="border:1px solid {{ column.button_border_color.color }};border-radius:50px;cursor:auto;mso-padding-alt:10px 25px;background:{{ column.button_bg_color.color }};" valign="middle">
+                                              <a href="{{ column.button_url.url.href }}" style="display:inline-block;width:{{ btn_anchor_width }}px;background:{{ column.button_bg_color.color }};color:#ffffff;font-family:FS Me, Arial;font-size:14px;font-weight:normal;line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:50px;" target="_blank"> {{ column.button_cta_text }} </a>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+{% endif %}
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+{% if loop.last %}
+                    <!--[if mso | IE]></td></tr></table><![endif]-->
+{% endif %}
+{% endfor %}
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--[if mso | IE]></td></tr></table></td></tr></table><![endif]-->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]-->
+<!-- SECTION END - 1 Card - 2 col -->

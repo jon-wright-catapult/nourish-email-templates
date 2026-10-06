@@ -1,0 +1,359 @@
+[ {
+  "id" : "89da9146-051a-3904-0c4e-8e106951d063",
+  "name" : "wrapper_bg",
+  "label" : "Wrapper background color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : null,
+    "opacity" : null
+  }
+}, {
+  "id" : "19a5869a-1521-8d41-3f42-cc4b36ae7b9f",
+  "name" : "section_bg",
+  "label" : "Card background color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#E0F5F5",
+    "opacity" : 100
+  }
+}, {
+  "id" : "e9a80895-cfd9-5513-ff18-7d17db0b1a13",
+  "name" : "section_border",
+  "label" : "Card border color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#66CCCC",
+    "opacity" : 100
+  }
+}, {
+  "id" : "8a1f2c10-3b5d-4e61-9a10-000000000001",
+  "name" : "items",
+  "label" : "Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : "items.button_text",
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "8a1f2c10-3b5d-4e61-9a10-000000000002",
+    "name" : "rich_text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p><span style=\"font-size:18px;font-weight:600\">The role of civic and business leadership in unlocking connectivity and growth in city regions</span></p><p>We will explore how place-based leadership, strategic investment, and partnerships with high-potential businesses can unlock long-term prosperity</p><p><b>Featuring</b>: Andrew Carter, Chief Executive, Centre for Cities ● Kellie Beirne, Chief Executive, Cardiff Capital Region ● Rokhsana Fiaz OBE, Mayor of Newham, Newham Council</p>"
+  }, {
+    "id" : "8a1f2c10-3b5d-4e61-9a10-000000000003",
+    "name" : "show_image",
+    "label" : "Show image",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "8a1f2c10-3b5d-4e61-9a10-000000000004",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_image",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "https://summit.cp.catapult.org.uk/hubfs/summit-2026-keynote-day-1-session-2.png",
+      "alt" : "",
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "8a1f2c10-3b5d-4e61-9a10-000000000005",
+    "name" : "show_button",
+    "label" : "Show button",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "8a1f2c10-3b5d-4e61-9a10-000000000006",
+    "name" : "button_text",
+    "label" : "Button text",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Save your place"
+  }, {
+    "id" : "8a1f2c10-3b5d-4e61-9a10-000000000007",
+    "name" : "button_url",
+    "label" : "Button URL",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : "https://nourishcare.com/"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "8a1f2c10-3b5d-4e61-9a10-000000000008",
+    "name" : "button_bg_color",
+    "label" : "Button background color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "8a1f2c10-3b5d-4e61-9a10-000000000009",
+    "name" : "button_border_color",
+    "label" : "Button border color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#0A1414",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "775b2c7d-9eaa-38fa-b449-7935c2fe8c61",
+    "name" : "button_text_color",
+    "label" : "Button text color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : null
+    }
+  }, {
+    "id" : "e75acb51-4be3-9dad-1009-992ec04c7459",
+    "name" : "button_full_width",
+    "label" : "Full width button",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "91d10a03-dd44-6c70-236f-421388c14ce0",
+    "name" : "button_width",
+    "label" : "Button width",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.button_full_width",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "slider",
+    "min" : 100,
+    "max" : 240,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 240
+  }, {
+    "id" : "8a1f2c10-3b5d-4e61-9a10-000000000010",
+    "name" : "button_border_radius",
+    "label" : "Button border radius (px)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "slider",
+    "min" : 0,
+    "max" : 50,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 50
+  }, {
+    "id" : "8a1f2c10-3b5d-4e61-9a10-000000000011",
+    "name" : "show_divider",
+    "label" : "Show divider",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "8a1f2c10-3b5d-4e61-9a10-000000000012",
+    "name" : "divider_style",
+    "label" : "Divider style",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_divider",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "dotted", "Dotted" ], [ "dashed", "Dashed" ], [ "solid", "Solid" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "dotted"
+  }, {
+    "id" : "8a1f2c10-3b5d-4e61-9a10-000000000013",
+    "name" : "divider_color",
+    "label" : "Divider color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_divider",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "rich_text" : "<p><span style=\"font-size:18px;font-weight:600\">The role of civic and business leadership in unlocking connectivity and growth in city regions</span></p><p>We will explore how place-based leadership, strategic investment, and partnerships with high-potential businesses can unlock long-term prosperity</p><p><b>Featuring</b>: Andrew Carter, Chief Executive, Centre for Cities ● Kellie Beirne, Chief Executive, Cardiff Capital Region ● Rokhsana Fiaz OBE, Mayor of Newham, Newham Council</p>",
+    "show_image" : true,
+    "image" : {
+      "src" : "https://summit.cp.catapult.org.uk/hubfs/summit-2026-keynote-day-1-session-2.png",
+      "alt" : "",
+      "loading" : "disabled"
+    },
+    "show_button" : true,
+    "button_text" : "Save your place",
+    "button_url" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : "https://nourishcare.com/"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    },
+    "button_bg_color" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    },
+    "button_border_color" : {
+      "color" : "#0A1414",
+      "opacity" : 100
+    },
+    "button_text_color" : {
+      "color" : null,
+      "opacity" : null
+    },
+    "full_width_button" : false,
+    "button_width" : 240,
+    "button_border_radius" : 50,
+    "show_divider" : true,
+    "divider_style" : "dotted",
+    "divider_color" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    }
+  } ]
+} ]

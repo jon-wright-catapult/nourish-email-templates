@@ -1,0 +1,223 @@
+{% set wrapper_bg = module.wrapper_bg_color.color %}
+{% set pad_top = module.wrapper_padding_top %}
+{% set pad_bottom = module.wrapper_padding_bottom %}
+{% set col_count = module.items|length %}
+
+{% if col_count == 1 %}
+  {% set max_img_width = 488 %}
+  {% set btn_table_width = 190 %}
+  {% set btn_anchor_width = 138 %}
+{% elif col_count == 2 %}
+  {% set max_img_width = 228 %}
+  {% set btn_table_width = 200 %}
+  {% set btn_anchor_width = 150 %}
+{% else %}
+  {% set max_img_width = 137 %}
+  {% set btn_table_width = 110 %}
+  {% set btn_anchor_width = 60 %}
+{% endif %}
+
+<!-- SECTION START - Card Group ({{ col_count }} col) -->
+<!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" bgcolor="{{ wrapper_bg }}"><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+<div style="background:{{ wrapper_bg }};background-color:{{ wrapper_bg }};margin:0px auto;max-width:600px;">
+  <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:{{ wrapper_bg }};background-color:{{ wrapper_bg }};width:100%;">
+    <tbody>
+      <tr>
+        <td style="direction:ltr;font-size:0px;padding:{{ pad_top }}px 30px {{ pad_bottom }}px 30px;text-align:center;">
+
+{% if col_count == 1 %}
+  {% set item = module.items[0] %}
+  {% set section_bg = item.section_bg_color.color %}
+  {% set section_border = item.section_border_color.color %}
+          <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" width="600px" ><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:540px;" width="540" bgcolor="{{ section_bg }}" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+          <div style="background:{{ section_bg }};background-color:{{ section_bg }};margin:0px auto;max-width:540px;border-radius:20px;overflow:hidden;">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:{{ section_bg }};background-color:{{ section_bg }};width:100%;border-collapse:separate;">
+              <tbody>
+                <tr>
+                  <td style="border:1px solid {{ section_border }};border-radius:20px;direction:ltr;font-size:0px;padding:5px;text-align:center;">
+                    <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:middle;width:528px;" ><![endif]-->
+                    <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:middle;width:100%;">
+                      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="border-collapse:separate;">
+                        <tbody>
+                          <tr>
+                            <td style="background-color:{{ section_bg }};border-radius:20px;vertical-align:middle;border-collapse:separate;padding:20px;">
+                              <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
+                                <tbody>
+
+{% if item.show_rich_text_top %}
+                                  <tr>
+                                    <td align="left" style="font-size:0px;padding:0px;padding-top:0px;word-break:break-word;">
+                                      <div style="font-family:FS Me, Arial;font-size:14px;font-weight:300;line-height:16px;text-align:left;color:#000000;">{{ item.rich_text_top }}</div>
+                                    </td>
+                                  </tr>
+{% endif %}
+{% if item.show_image and item.image.src %}
+  {% set img_w = item.image_width %}
+  {% if not img_w or img_w > max_img_width or img_w < 1 %}
+    {% set img_w = max_img_width %}
+  {% endif %}
+                                  <tr>
+                                    <td align="left" style="font-size:0px;padding:0px;padding-top:10px;word-break:break-word;">
+                                      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;">
+                                        <tbody>
+                                          <tr>
+                                            <td style="width:{{ img_w }}px;">
+                                              <img alt="{{ item.image.alt|escape_attr }}" src="{{ item.image.src }}" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:14px;" width="{{ img_w }}" height="auto" />
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+{% endif %}
+{% if item.show_rich_text_bottom %}
+                                  <tr>
+                                    <td align="left" style="font-size:0px;padding:10px 0px 0px 0px;word-break:break-word;">
+                                      <div style="font-family:FS Me, Arial;font-size:14px;font-weight:300;line-height:16px;text-align:left;color:#000000;">{{ item.rich_text_bottom }}</div>
+                                    </td>
+                                  </tr>
+{% endif %}
+{% if item.show_button %}
+                                  <tr>
+                                    <td align="left" style="font-size:0px;padding:20px 0px 0px 0px;word-break:break-word;">
+                                      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;width:{{ btn_table_width }}px;line-height:100%;">
+                                        <tbody>
+                                          <tr>
+                                            <td align="center" bgcolor="{{ item.button_bg_color.color }}" role="presentation" style="border:1px solid {{ item.button_border_color.color }};border-radius:50px;cursor:auto;mso-padding-alt:10px 25px;background:{{ item.button_bg_color.color }};" valign="middle">
+                                              <a href="{{ item.button_url.url.href }}" style="display:inline-block;width:{{ btn_anchor_width }}px;background:{{ item.button_bg_color.color }};color:#ffffff;font-family:FS Me, Arial;font-size:14px;font-weight:normal;line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:50px;" target="_blank"> {{ item.button_cta_text }} </a>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+{% endif %}
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!--[if mso | IE]></td></tr></table><![endif]-->
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--[if mso | IE]></td></tr></table></td></tr></table><![endif]-->
+
+{% else %}
+{% for item in module.items %}
+  {% set section_bg = item.section_bg_color.color %}
+  {% set section_border = item.section_border_color.color %}
+
+  {% if col_count == 2 %}
+    {% set outlook_width = 270 %}
+    {% if loop.first %}
+      {% set out_pad = "0px 6px 0px 0px" %}
+      {% set div_pad = "0% 0% 1% 0%" %}
+      {% set col_class = "mj-column-per-49 mj-column-gutter-2-1-per-2" %}
+    {% else %}
+      {% set out_pad = "0px 0px 0px 5px" %}
+      {% set div_pad = "1% 0% 0% 0%" %}
+      {% set col_class = "mj-column-per-49 mj-column-gutter-2-2-per-2" %}
+    {% endif %}
+  {% else %}
+    {% set outlook_width = 180 %}
+    {% if loop.first %}
+      {% set out_pad = "0px 6px 0px 0px" %}
+      {% set div_pad = "0% 0% 1% 0%" %}
+      {% set col_class = "mj-column-per-31-996667 mj-column-gutter-3-1-per-2" %}
+    {% elif loop.last %}
+      {% set out_pad = "0px 0px 0px 5px" %}
+      {% set div_pad = "1% 0% 0% 0%" %}
+      {% set col_class = "mj-column-per-31-996667 mj-column-gutter-3-3-per-2" %}
+    {% else %}
+      {% set out_pad = "0px 6px 0px 5px" %}
+      {% set div_pad = "1% 0% 1% 0%" %}
+      {% set col_class = "mj-column-per-31-996667 mj-column-gutter-3-2-per-2" %}
+    {% endif %}
+  {% endif %}
+
+{% if loop.first %}
+          <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:{{ outlook_width }}px;padding:{{ out_pad }};" ><![endif]-->
+{% else %}
+          <!--[if mso | IE]></td><td class="" style="vertical-align:top;width:{{ outlook_width }}px;padding:{{ out_pad }};" ><![endif]-->
+{% endif %}
+          <div class="{{ col_class }} mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;padding:{{ div_pad }};">
+            <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="border-collapse:separate;">
+              <tbody>
+                <tr>
+                  <td style="background-color:{{ section_bg }};border:1px solid {{ section_border }};border-radius:20px 20px 20px 20px;vertical-align:top;border-collapse:separate;padding:20px;">
+                    <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
+                      <tbody>
+
+{% if item.show_rich_text_top %}
+                        <tr>
+                          <td align="left" style="font-size:0px;padding:0px;word-break:break-word;">
+                            <div style="font-family:FS Me, Arial;font-size:14px;font-weight:300;line-height:16px;text-align:left;color:#000000;">{{ item.rich_text_top }}</div>
+                          </td>
+                        </tr>
+{% endif %}
+{% if item.show_image and item.image.src %}
+  {% set img_w = item.image_width %}
+  {% if not img_w or img_w > max_img_width or img_w < 1 %}
+    {% set img_w = max_img_width %}
+  {% endif %}
+                        <tr>
+                          <td align="{{ item.image_alignment }}" style="font-size:0px;padding:0px 0px;word-break:break-word;">
+                            <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;">
+                              <tbody>
+                                <tr>
+                                  <td style="width:{{ img_w }}px;">
+                                    <img alt="{{ item.image.alt|escape_attr }}" src="{{ item.image.src }}" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:14px;" width="{{ img_w }}" height="auto" />
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+{% endif %}
+{% if item.show_rich_text_bottom %}
+                        <tr>
+                          <td align="left" style="font-size:0px;padding:0px 0px;word-break:break-word;">
+                            <div style="font-family:FS Me, Arial;font-size:14px;font-weight:300;line-height:16px;text-align:left;color:#000000;">{{ item.rich_text_bottom }}</div>
+                          </td>
+                        </tr>
+{% endif %}
+{% if item.show_button %}
+                        <tr>
+                          <td align="left" style="font-size:0px;padding:0px 0px 0px 0px;word-break:break-word;">
+                            <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;width:{{ btn_table_width }}px;line-height:100%;">
+                              <tbody>
+                                <tr>
+                                  <td align="center" bgcolor="{{ item.button_bg_color.color }}" role="presentation" style="border:1px solid {{ item.button_border_color.color }};border-radius:50px;cursor:auto;mso-padding-alt:10px 25px;background:{{ item.button_bg_color.color }};" valign="middle">
+                                    <a href="{{ item.button_url.url.href }}" style="display:inline-block;width:{{ btn_anchor_width }}px;background:{{ item.button_bg_color.color }};color:#ffffff;font-family:FS Me, Arial;font-size:14px;font-weight:normal;line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:50px;" target="_blank"> {{ item.button_cta_text }} </a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+{% endif %}
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+{% if loop.last %}
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+{% endif %}
+{% endfor %}
+{% endif %}
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]-->
+<!-- SECTION END - Card Group -->

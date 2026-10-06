@@ -1,0 +1,39 @@
+<!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" bgcolor="{{ module.style.background_color.color }}" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+<div style="background:#004038;background-color:{{ module.style.background_color.color }};margin:0px auto;max-width:600px;">
+  <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:{{ module.style.background_color.color }};background-color:{{ module.style.background_color.color }};width:100%;">
+    <tbody>
+      <tr>
+        <td style="direction:ltr;font-size:0px;padding:0px 5px 10px;text-align:center;">
+          <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:590px;" ><![endif]-->
+          <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+            <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+              <tbody>
+                <tr>
+                  <td style="vertical-align:top;padding:0px;">
+                    <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
+                      <tbody>
+                        <tr>
+                          <td align="left" style="font-size:0px;padding:0px 25px;word-break:break-word;">
+                            <table cellpadding="0" cellspacing="0" width="100%" border="0" style="color:{{ module.style.text_color.color }};font-family:Montserrat, Arial;font-size:14px;line-height:22px;table-layout:auto;width:100%;border:none;">
+                              {% for item in module.list_item %}
+                              <tr style="border-bottom:1px solid {{ module.style.bottom_border_color.color }};color:{{ module.style.text_color.color }}">
+                                <td style="border-bottom:1px solid {{ module.style.bottom_border_color.color }};padding: 10px 10px 10px 0;text-align:left">{{ item }}</td>
+                              </tr>
+                              {% endfor %}
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]-->

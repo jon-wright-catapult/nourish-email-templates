@@ -1,0 +1,94 @@
+{#
+  Card (text left, button right) email module
+#}
+
+{% set wrapper_bg   = module.wrapper_bg.color or "#ffffff" %}
+{% set card_bg      = module.section_bg.color or "#E0F5F5" %}
+{% set card_border  = module.section_border.color or "#66CCCC" %}
+
+{% set btn          = module.button %}
+{% set btn_bg       = btn.button_bg.color or "#66cccc" %}
+{% set btn_border   = btn.button_border.color or btn_bg %}
+{% set btn_text     = btn.button_text_color.color or "#ffffff" %}
+{% set btn_href     = btn.button_url.href or "#" %}
+
+{% set button_width = 190 %}  {# total px width of the button #}
+{% set border_width = 1 %}    {# px – included in the total width #}
+{% set pad_x        = 25 %}   {# px – left/right padding inside the button #}
+{% set link_width   = button_width - (pad_x * 2) - (border_width * 2) %}
+
+<!-- SECTION START - 1 Card - 2 col -->
+<!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" bgcolor="{{ wrapper_bg }}" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+<div style="background:{{ wrapper_bg }};background-color:{{ wrapper_bg }};margin:0px auto;max-width:600px;">
+  <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:{{ wrapper_bg }};background-color:{{ wrapper_bg }};width:100%;">
+    <tbody>
+      <tr>
+        <td style="direction:ltr;font-size:0px;padding:10px 30px 20px 30px;text-align:center;">
+          <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" width="600px" ><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:540px;" width="540" bgcolor="{{ card_bg }}" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+          <div style="background:{{ card_bg }};background-color:{{ card_bg }};margin:0px auto;max-width:540px;border-radius:20px;overflow:hidden;">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:{{ card_bg }};background-color:{{ card_bg }};width:100%;border-collapse:separate;">
+              <tbody>
+                <tr>
+                  <td style="border:1px solid {{ card_border }};border-radius:20px;direction:ltr;font-size:0px;padding:5px;text-align:center;">
+                    <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:middle;width:317px;" ><![endif]-->
+                    <div class="mj-column-per-60 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:middle;width:100%;">
+                      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="border-collapse:separate;">
+                        <tbody>
+                          <tr>
+                            <td style="background-color:{{ card_bg }};border-radius:20px 0px 0px 20px;vertical-align:middle;border-collapse:separate;padding:20px 30px;">
+                              <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
+                                <tbody>
+                                  <tr>
+                                    <td align="left" style="font-size:0px;padding:0px;word-break:break-word;">
+                                      <div style="font-family:FS Me, Arial;font-size:14px;font-weight:300;line-height:16px;text-align:left;color:#000000;">{{ module.card_text }}</div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!--[if mso | IE]></td><td class="" style="vertical-align:middle;width:211px;" ><![endif]-->
+                    <div class="mj-column-per-40 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:middle;width:100%;">
+                      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                        <tbody>
+                          <tr>
+                            <td style="background-color:{{ card_bg }};vertical-align:middle;padding:0px 0px 0px 20px;">
+                              <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
+                                <tbody>
+                                  <tr>
+                                    <td align="left" style="font-size:0px;padding:0px 0px 0px 0px;word-break:break-word;">
+                                      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;width:{{ button_width }}px;line-height:100%;">
+                                        <tbody>
+                                          <tr>
+                                            <td align="center" bgcolor="{{ btn_bg }}" role="presentation" style="border:{{ border_width }}px solid {{ btn_border }};border-radius:50px;cursor:auto;mso-padding-alt:10px {{ pad_x }}px;background:{{ btn_bg }};" valign="middle">
+                                              <a href="{{ btn_href }}" style="display:inline-block;width:{{ link_width }}px;background:{{ btn_bg }};color:{{ btn_text }};font-family:FS Me, Arial;font-size:14px;font-weight:normal;line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:10px {{ pad_x }}px;mso-padding-alt:0px;border-radius:50px;" target="_blank"> {{ btn.cta_text|escape }} </a>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!--[if mso | IE]></td></tr></table><![endif]-->
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--[if mso | IE]></td></tr></table></td></tr></table><![endif]-->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]-->
+<!-- SECTION END - 1 Card - 2 col -->
