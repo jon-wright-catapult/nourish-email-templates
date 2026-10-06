@@ -1,0 +1,19 @@
+{
+  "label": "Nourish - List - Single Column",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Single-column list with a divider line under each item.",
+  "content_types": [
+    "EMAIL"
+  ],
+  "host_template_types": [
+    "EMAIL"
+  ],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "module_id": 476931717343,
+  "is_available_for_new_content": true
+}

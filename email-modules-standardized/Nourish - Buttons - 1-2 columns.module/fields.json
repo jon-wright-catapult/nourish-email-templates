@@ -1,0 +1,308 @@
+[
+  {
+    "id": "ea5deebd-b222-48cf-ba28-e8bc5369c7e3",
+    "name": "buttons",
+    "label": "Buttons",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": 1,
+      "max": 2,
+      "sorting_label_field": "buttons.button_cta_text",
+      "default": 1
+    },
+    "tab": "CONTENT",
+    "expanded": true,
+    "type": "group",
+    "children": [
+      {
+        "id": "d990592a-36db-4eb2-82c9-a5805a880001",
+        "name": "button_cta_text",
+        "label": "Button CTA text",
+        "required": true,
+        "locked": false,
+        "type": "text",
+        "allow_new_line": false,
+        "aliases_mapping": {
+          "property_aliases_paths": {
+            "button_cta_text": [
+              "cta_text"
+            ]
+          }
+        },
+        "default": "Save your place"
+      },
+      {
+        "id": "19b2e1f0-70f6-4168-98c9-3206f9226aec",
+        "name": "button_url",
+        "label": "Button URL",
+        "required": true,
+        "locked": false,
+        "type": "link",
+        "supported_types": [
+          "EXTERNAL",
+          "FILE",
+          "EMAIL_ADDRESS",
+          "CONTENT"
+        ],
+        "show_advanced_rel_options": false,
+        "default": {
+          "url": {
+            "content_id": null,
+            "type": "EXTERNAL",
+            "href": "https://nourishcare.com/"
+          },
+          "open_in_new_tab": true,
+          "no_follow": false
+        }
+      },
+      {
+        "id": "e9d27342-897f-4098-95df-f202bc98cab7",
+        "name": "button_alignment",
+        "label": "Button alignment",
+        "required": false,
+        "locked": false,
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          [
+            "left",
+            "Left"
+          ],
+          [
+            "center",
+            "Center"
+          ],
+          [
+            "right",
+            "Right"
+          ]
+        ],
+        "multiple": false,
+        "default": "center"
+      },
+      {
+        "id": "93831dd0-476e-466a-9381-815f7d79e95e",
+        "name": "button_width_mode",
+        "label": "Button width",
+        "required": false,
+        "locked": false,
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          [
+            "full",
+            "Full width"
+          ],
+          [
+            "fixed",
+            "Fixed width"
+          ]
+        ],
+        "multiple": false,
+        "default": "fixed"
+      },
+      {
+        "id": "39d3a5e4-50e4-4607-99fc-818c27a3b6ec",
+        "name": "button_fixed_width",
+        "label": "Button fixed width (px, max 540 \u2014 auto-capped to 250 for 2 buttons)",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display": "slider",
+        "min": 100,
+        "max": 540,
+        "step": 1,
+        "suffix": "px",
+        "visibility": {
+          "controlling_field_path": "buttons.button_width_mode",
+          "controlling_value_regex": "fixed",
+          "operator": "EQUAL"
+        },
+        "default": 240
+      },
+      {
+        "id": "060d01b4-9c31-43ca-b606-95caea3c254a",
+        "name": "button_bg_color",
+        "label": "Button background color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "aliases_mapping": {
+          "property_aliases_paths": {
+            "button_bg_color": [
+              "button_bg"
+            ]
+          }
+        },
+        "default": {
+          "color": "#66cccc",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "ad37673c-7a8f-41cb-ad12-ff090268c80d",
+        "name": "button_text_color",
+        "label": "Button text color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "default": {
+          "color": "#ffffff",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "5eb58a15-1149-4e0f-ae2b-39e3c9ad782e",
+        "name": "button_border_color",
+        "label": "Button border color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "aliases_mapping": {
+          "property_aliases_paths": {
+            "button_border_color": [
+              "button_border"
+            ]
+          }
+        },
+        "default": {
+          "color": "#66cccc",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "b80b2576-0bc4-44f9-a67b-92aa7ce10e5a",
+        "name": "button_font_weight",
+        "label": "Button font weight",
+        "required": false,
+        "locked": false,
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          [
+            "normal",
+            "Normal"
+          ],
+          [
+            "bold",
+            "Bold"
+          ]
+        ],
+        "multiple": false,
+        "default": "normal"
+      }
+    ],
+    "default": [
+      {
+        "button_cta_text": "Save your place",
+        "button_url": {
+          "url": {
+            "content_id": null,
+            "type": "EXTERNAL",
+            "href": "https://nourishcare.com/"
+          },
+          "open_in_new_tab": true,
+          "no_follow": false
+        },
+        "button_alignment": "center",
+        "button_width_mode": "fixed",
+        "button_fixed_width": 240,
+        "button_bg_color": {
+          "color": "#66cccc",
+          "opacity": 100
+        },
+        "button_text_color": {
+          "color": "#ffffff",
+          "opacity": 100
+        },
+        "button_border_color": {
+          "color": "#66cccc",
+          "opacity": 100
+        },
+        "button_font_weight": "normal"
+      }
+    ]
+  },
+  {
+    "id": "4bbf2cfc-a4d4-4ea0-8eb7-53f3c2b3cc42",
+    "name": "styles",
+    "label": "Styles",
+    "required": false,
+    "locked": false,
+    "tab": "STYLE",
+    "type": "group",
+    "expanded": false,
+    "children": [
+      {
+        "id": "e3488fbf-1fda-45e5-8c8a-4845896740d8",
+        "name": "section_bg_color",
+        "label": "Section background color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "aliases_mapping": {
+          "property_aliases_paths": {
+            "section_bg_color": [
+              "section_bg"
+            ]
+          }
+        },
+        "default": {
+          "color": "#3e4681",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "d947c24c-9fe4-4f48-bec0-916506322555",
+        "name": "section_padding_top",
+        "label": "Section padding top (px)",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display": "slider",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "suffix": "px",
+        "aliases_mapping": {
+          "property_aliases_paths": {
+            "section_padding_top": [
+              "padding_top"
+            ]
+          }
+        },
+        "default": 0
+      },
+      {
+        "id": "af9ae43c-3d02-4410-8449-e6eda3112669",
+        "name": "section_padding_bottom",
+        "label": "Section padding bottom (px)",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display": "slider",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "suffix": "px",
+        "aliases_mapping": {
+          "property_aliases_paths": {
+            "section_padding_bottom": [
+              "padding_bottom"
+            ]
+          }
+        },
+        "default": 20
+      }
+    ],
+    "default": {
+      "section_bg_color": {
+        "color": "#3e4681",
+        "opacity": 100
+      },
+      "section_padding_top": 0,
+      "section_padding_bottom": 20
+    }
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "label": "Nourish - Cards - CTA",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Single card with text on the left and a call-to-action button on the right.",
+  "content_types": [
+    "EMAIL"
+  ],
+  "host_template_types": [
+    "EMAIL"
+  ],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "module_id": 477382821091,
+  "is_available_for_new_content": true
+}

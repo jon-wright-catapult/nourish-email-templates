@@ -1,0 +1,19 @@
+{
+  "label": "Nourish - Cards - Repeatable Items",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "One card containing any number of stacked items, each with optional text, image, button and divider.",
+  "content_types": [
+    "EMAIL"
+  ],
+  "host_template_types": [
+    "EMAIL"
+  ],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "module_id": 475623839956,
+  "is_available_for_new_content": true
+}

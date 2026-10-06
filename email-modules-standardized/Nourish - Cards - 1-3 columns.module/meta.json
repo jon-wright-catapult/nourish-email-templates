@@ -1,0 +1,19 @@
+{
+  "label": "Nourish - Cards - 1-3 columns",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "One to three independent cards side by side; layout and widths switch automatically with the number of cards.",
+  "content_types": [
+    "EMAIL"
+  ],
+  "host_template_types": [
+    "EMAIL"
+  ],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "module_id": 476192574663,
+  "is_available_for_new_content": true
+}

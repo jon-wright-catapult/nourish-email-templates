@@ -1,0 +1,112 @@
+{#
+  Nourish - Buttons - 1-2 columns
+  Layout is driven by the number of repeater items. The lookup below
+  swaps in the MJML column class, the Outlook ghost-table width and the
+  maximum button width that fits in that column.
+#}
+
+{% set font_family = "FS Me, Arial" %}
+
+{# ---------- Layout lookup (index = number of buttons - 1) ---------- #}
+{# max_btn_width = Outlook column width minus the 20px left/right column padding #}
+{% set layouts = [
+  { "col_class": "mj-column-per-100", "mso_col_width": 580, "max_btn_width": 540 },
+  { "col_class": "mj-column-per-50",  "mso_col_width": 290, "max_btn_width": 250 }
+] %}
+
+{% set buttons      = module.buttons %}
+{% set count        = buttons|length %}
+{% set border_width = 1 %}   {# px, included in the button's total width #}
+{% set pad_x        = 25 %}  {# px, left/right padding inside the button #}
+{% set min_btn_width = 100 %}
+
+{% if count > 0 %}
+  {% set layout     = layouts[count - 1] if count <= layouts|length else layouts|last %}
+  {% set section_bg = module.styles.section_bg_color.color or "#3e4681" %}
+  {% set pad_top    = module.styles.section_padding_top|int %}
+  {% set pad_bottom = module.styles.section_padding_bottom|int %}
+
+<!-- SECTION START - {{ count }} col buttons -->
+<!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" bgcolor="{{ section_bg }}" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+<div style="background:{{ section_bg }};background-color:{{ section_bg }};margin:0px auto;max-width:600px;">
+  <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:{{ section_bg }};background-color:{{ section_bg }};width:100%;">
+    <tbody>
+      <tr>
+        <td style="direction:ltr;font-size:0px;padding:{{ pad_top }}px 10px {{ pad_bottom }}px;text-align:center;">
+          <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><![endif]-->
+
+          {% for item in buttons %}
+            {% if loop.index <= layouts|length %}
+              {% set btn_bg     = item.button_bg_color.color or "#66cccc" %}
+              {% set btn_border = item.button_border_color.color or btn_bg %}
+              {% set btn_text   = item.button_text_color.color or "#ffffff" %}
+              {% set btn_weight = item.button_font_weight or "normal" %}
+              {# .url.href = link field (current). .href = legacy url-field value saved
+                 on instances created before standardization; remove once none remain. #}
+              {% set btn_href   = item.button_url.url.href or item.button_url.href or "#" %}
+              {% set btn_align  = item.button_alignment or "center" %}
+
+              {# Clamp fixed width against this layout's available column width #}
+              {% set btn_w = item.button_fixed_width|int %}
+              {% if btn_w < 1 %}{% set btn_w = 240 %}{% endif %}
+              {% if btn_w > layout.max_btn_width %}{% set btn_w = layout.max_btn_width %}{% endif %}
+              {% if btn_w < min_btn_width %}{% set btn_w = min_btn_width %}{% endif %}
+              {# anchor width = total button width - horizontal padding - borders #}
+              {% set btn_a_w = btn_w - (pad_x * 2) - (border_width * 2) %}
+
+          <!-- Start Column -->
+          <!--[if mso | IE]><td class="" style="vertical-align:top;width:{{ layout.mso_col_width }}px;" ><![endif]-->
+          <div class="{{ layout.col_class }} mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+            <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+              <tbody>
+                <tr>
+                  <td style="vertical-align:top;padding:10px 20px 0px 20px;">
+                    <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
+                      <tbody>
+                        <tr>
+                          <td align="{{ btn_align }}" style="font-size:0px;padding:0px;word-break:break-word;">
+              {% if item.button_width_mode == "full" %}
+                            <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;width:100%;line-height:100%;">
+                              <tbody>
+                                <tr>
+                                  <td align="center" bgcolor="{{ btn_bg }}" role="presentation" style="border:{{ border_width }}px solid {{ btn_border }};border-radius:50px;cursor:auto;mso-padding-alt:10px {{ pad_x }}px;background:{{ btn_bg }};" valign="middle">
+                                    <a href="{{ btn_href }}" style="display:inline-block;background:{{ btn_bg }};color:{{ btn_text }};font-family:{{ font_family }};font-size:14px;font-weight:{{ btn_weight }};line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:10px {{ pad_x }}px;mso-padding-alt:0px;border-radius:50px;" target="_blank"> {{ item.button_cta_text|escape }} </a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+              {% else %}
+                            <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;width:{{ btn_w }}px;line-height:100%;">
+                              <tbody>
+                                <tr>
+                                  <td align="center" bgcolor="{{ btn_bg }}" role="presentation" style="border:{{ border_width }}px solid {{ btn_border }};border-radius:50px;cursor:auto;mso-padding-alt:10px {{ pad_x }}px;background:{{ btn_bg }};" valign="middle">
+                                    <a href="{{ btn_href }}" style="display:inline-block;width:{{ btn_a_w }}px;background:{{ btn_bg }};color:{{ btn_text }};font-family:{{ font_family }};font-size:14px;font-weight:{{ btn_weight }};line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:10px {{ pad_x }}px;mso-padding-alt:0px;border-radius:50px;" target="_blank"> {{ item.button_cta_text|escape }} </a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+              {% endif %}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--[if mso | IE]></td><![endif]-->
+          <!-- End Column -->
+
+            {% endif %}
+          {% endfor %}
+
+          <!--[if mso | IE]></tr></table><![endif]-->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]-->
+<!-- SECTION END - {{ count }} col buttons -->
+{% endif %}

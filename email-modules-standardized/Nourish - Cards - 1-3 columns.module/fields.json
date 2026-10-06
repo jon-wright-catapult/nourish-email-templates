@@ -1,0 +1,548 @@
+[
+  {
+    "id": "7fc36e9b-489a-4597-ad57-a17516c46063",
+    "name": "items",
+    "label": "Cards (1-3)",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": 1,
+      "max": 3,
+      "sorting_label_field": "items.button_cta_text",
+      "default": 1
+    },
+    "children": [
+      {
+        "id": "4ecc70c3-ae6a-4178-9cd4-994f978da277",
+        "name": "section_bg_color",
+        "label": "Card background color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "default": {
+          "color": "#E0F5F5",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "a0d48e73-ec39-4954-a8b1-b92015303a6e",
+        "name": "section_border_color",
+        "label": "Card border color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "default": {
+          "color": "#66CCCC",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "fcaa6baa-c964-4b22-a930-069137127fa1",
+        "name": "show_rich_text_top",
+        "label": "Show top text",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "display": "toggle",
+        "default": true
+      },
+      {
+        "id": "1ddfc1cb-cf09-4475-9984-86fbad8c110f",
+        "name": "rich_text_top",
+        "label": "Card rich text (top)",
+        "required": false,
+        "locked": false,
+        "type": "richtext",
+        "visibility": {
+          "controlling_field_path": "items.show_rich_text_top",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL"
+        },
+        "default": "<p><span style=\"font-size:18px;font-weight:600\">The role of civic and business leadership in unlocking connectivity and growth in city regions</span></p><p>We will explore how place-based leadership, strategic investment, and partnerships with high-potential businesses can unlock long-term prosperity</p>"
+      },
+      {
+        "id": "779072ab-fb42-4830-893c-26c828543f44",
+        "name": "show_image",
+        "label": "Show image",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "display": "toggle",
+        "default": true
+      },
+      {
+        "id": "0e83ad76-8873-4307-a8cb-3166ef424294",
+        "name": "image",
+        "label": "Image",
+        "required": false,
+        "locked": false,
+        "type": "image",
+        "responsive": false,
+        "resizable": false,
+        "show_loading": false,
+        "visibility": {
+          "controlling_field_path": "items.show_image",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL"
+        },
+        "default": {
+          "src": "https://summit.cp.catapult.org.uk/hubfs/summit-2026-keynote-day-1-session-2.png",
+          "alt": "",
+          "loading": "disabled"
+        }
+      },
+      {
+        "id": "25a30638-0e56-44ec-8e8f-c9ee71a31ce9",
+        "name": "image_link_url",
+        "label": "Image link URL (optional)",
+        "required": false,
+        "locked": false,
+        "type": "link",
+        "supported_types": [
+          "EXTERNAL",
+          "FILE",
+          "EMAIL_ADDRESS",
+          "CONTENT"
+        ],
+        "show_advanced_rel_options": false,
+        "visibility": {
+          "controlling_field_path": "items.show_image",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL"
+        },
+        "default": {
+          "url": {
+            "content_id": null,
+            "type": "EXTERNAL",
+            "href": ""
+          },
+          "open_in_new_tab": true,
+          "no_follow": false
+        }
+      },
+      {
+        "id": "da4288c9-1856-47d8-aa7a-be2535f76221",
+        "name": "image_alignment",
+        "label": "Image alignment",
+        "required": false,
+        "locked": false,
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          [
+            "left",
+            "Left"
+          ],
+          [
+            "center",
+            "Center"
+          ],
+          [
+            "right",
+            "Right"
+          ]
+        ],
+        "multiple": false,
+        "visibility": {
+          "controlling_field_path": "items.show_image",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL"
+        },
+        "default": "left"
+      },
+      {
+        "id": "c4b5b472-1e0b-44ae-987b-634c64880109",
+        "name": "image_width",
+        "label": "Card image width (px, max 488 \u2014 auto-capped to 228 for 2 cards, 137 for 3)",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display": "slider",
+        "min": 20,
+        "max": 488,
+        "step": 1,
+        "suffix": "px",
+        "visibility": {
+          "controlling_field_path": "items.show_image",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL"
+        },
+        "default": 488
+      },
+      {
+        "id": "5708e205-ebfd-45e4-b6b5-6d7f480fd19d",
+        "name": "show_rich_text_bottom",
+        "label": "Show bottom text",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "display": "toggle",
+        "default": true
+      },
+      {
+        "id": "dff95320-a218-47f3-b406-1f89090de27e",
+        "name": "rich_text_bottom",
+        "label": "Card rich text (bottom)",
+        "required": false,
+        "locked": false,
+        "type": "richtext",
+        "visibility": {
+          "controlling_field_path": "items.show_rich_text_bottom",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL"
+        },
+        "default": "<p>Watch all of these sessions, network with other attendees and get access to the content on-demand. Register today.</p>"
+      },
+      {
+        "id": "b7eee1be-bb47-4252-a916-e3c4ccb08d2a",
+        "name": "show_button",
+        "label": "Show button",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "display": "toggle",
+        "default": true
+      },
+      {
+        "id": "22a29d52-f411-4c5b-bd0f-d344af5d244f",
+        "name": "button_cta_text",
+        "label": "Button CTA text",
+        "required": false,
+        "locked": false,
+        "type": "text",
+        "allow_new_line": false,
+        "visibility": {
+          "controlling_field_path": "items.show_button",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL"
+        },
+        "default": "Register"
+      },
+      {
+        "id": "504f02ed-4d0f-4a5a-9232-084532ddabd3",
+        "name": "button_url",
+        "label": "Button URL",
+        "required": false,
+        "locked": false,
+        "type": "link",
+        "supported_types": [
+          "EXTERNAL",
+          "FILE",
+          "EMAIL_ADDRESS",
+          "CONTENT"
+        ],
+        "show_advanced_rel_options": false,
+        "visibility": {
+          "controlling_field_path": "items.show_button",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL"
+        },
+        "default": {
+          "url": {
+            "content_id": null,
+            "type": "EXTERNAL",
+            "href": "https://nourishcare.com/"
+          },
+          "open_in_new_tab": true,
+          "no_follow": false
+        }
+      },
+      {
+        "id": "214b415e-b338-4778-b3c1-06bca8519141",
+        "name": "button_alignment",
+        "label": "Button alignment",
+        "required": false,
+        "locked": false,
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          [
+            "left",
+            "Left"
+          ],
+          [
+            "center",
+            "Center"
+          ],
+          [
+            "right",
+            "Right"
+          ]
+        ],
+        "multiple": false,
+        "visibility": {
+          "controlling_field_path": "items.show_button",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL"
+        },
+        "default": "left"
+      },
+      {
+        "id": "90586d1f-aff4-4190-af5e-533d8c06c691",
+        "name": "button_width_mode",
+        "label": "Button width",
+        "required": false,
+        "locked": false,
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          [
+            "full",
+            "Full width"
+          ],
+          [
+            "fixed",
+            "Fixed width"
+          ]
+        ],
+        "multiple": false,
+        "visibility": {
+          "controlling_field_path": "items.show_button",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL"
+        },
+        "default": "fixed"
+      },
+      {
+        "id": "156a75e2-0ef8-4813-8443-e3bf3c3356d6",
+        "name": "button_fixed_width",
+        "label": "Button fixed width (px, max 488 \u2014 auto-capped to 228 for 2 cards, 137 for 3)",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display": "slider",
+        "min": 100,
+        "max": 488,
+        "step": 1,
+        "suffix": "px",
+        "visibility": {
+          "controlling_field_path": "items.button_width_mode",
+          "controlling_value_regex": "fixed",
+          "operator": "EQUAL"
+        },
+        "default": 190
+      },
+      {
+        "id": "2c9dfd07-275a-4de1-bb6d-cdeef8b88256",
+        "name": "button_bg_color",
+        "label": "Button background color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "visibility": {
+          "controlling_field_path": "items.show_button",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL"
+        },
+        "default": {
+          "color": "#66cccc",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "4c6d8262-2444-4eb0-b202-156229ec3148",
+        "name": "button_text_color",
+        "label": "Button text color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "visibility": {
+          "controlling_field_path": "items.show_button",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL"
+        },
+        "default": {
+          "color": "#ffffff",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "d5ef7cda-0502-4d0e-91f0-38537c2aa569",
+        "name": "button_border_color",
+        "label": "Button border color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "visibility": {
+          "controlling_field_path": "items.show_button",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL"
+        },
+        "default": {
+          "color": "#0A1414",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "b1a252cf-2640-4361-9332-6d83624f2235",
+        "name": "button_font_weight",
+        "label": "Button font weight",
+        "required": false,
+        "locked": false,
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          [
+            "normal",
+            "Normal"
+          ],
+          [
+            "bold",
+            "Bold"
+          ]
+        ],
+        "multiple": false,
+        "visibility": {
+          "controlling_field_path": "items.show_button",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL"
+        },
+        "default": "normal"
+      }
+    ],
+    "tab": "CONTENT",
+    "expanded": false,
+    "type": "group",
+    "default": [
+      {
+        "section_bg_color": {
+          "color": "#E0F5F5",
+          "opacity": 100
+        },
+        "section_border_color": {
+          "color": "#66CCCC",
+          "opacity": 100
+        },
+        "show_rich_text_top": true,
+        "rich_text_top": "<p><span style=\"font-size:18px;font-weight:600\">The role of civic and business leadership in unlocking connectivity and growth in city regions</span></p><p>We will explore how place-based leadership, strategic investment, and partnerships with high-potential businesses can unlock long-term prosperity</p>",
+        "show_image": true,
+        "image": {
+          "src": "https://summit.cp.catapult.org.uk/hubfs/summit-2026-keynote-day-1-session-2.png",
+          "alt": "",
+          "loading": "disabled"
+        },
+        "image_link_url": {
+          "url": {
+            "content_id": null,
+            "type": "EXTERNAL",
+            "href": ""
+          },
+          "open_in_new_tab": true,
+          "no_follow": false
+        },
+        "image_alignment": "left",
+        "image_width": 488,
+        "show_rich_text_bottom": true,
+        "rich_text_bottom": "<p>Watch all of these sessions, network with other attendees and get access to the content on-demand. Register today.</p>",
+        "show_button": true,
+        "button_cta_text": "Register",
+        "button_url": {
+          "url": {
+            "content_id": null,
+            "type": "EXTERNAL",
+            "href": "https://nourishcare.com/"
+          },
+          "open_in_new_tab": true,
+          "no_follow": false
+        },
+        "button_alignment": "left",
+        "button_width_mode": "fixed",
+        "button_fixed_width": 190,
+        "button_bg_color": {
+          "color": "#66cccc",
+          "opacity": 100
+        },
+        "button_text_color": {
+          "color": "#ffffff",
+          "opacity": 100
+        },
+        "button_border_color": {
+          "color": "#0A1414",
+          "opacity": 100
+        },
+        "button_font_weight": "normal"
+      }
+    ]
+  },
+  {
+    "id": "c2721268-f0db-4db1-b115-4c8aee96fddc",
+    "name": "styles",
+    "label": "Styles",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "9216dced-df76-469e-8952-bc1a34e094c8",
+        "name": "wrapper_bg_color",
+        "label": "Wrapper background color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "aliases_mapping": {
+          "property_aliases_paths": {
+            "wrapper_bg_color": [
+              "wrapper_bg_color"
+            ]
+          }
+        },
+        "default": {
+          "color": "#ffffff",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "10f81744-98b5-4785-9027-c18655ed314c",
+        "name": "wrapper_padding_top",
+        "label": "Wrapper padding top (px)",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display": "slider",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "suffix": "px",
+        "aliases_mapping": {
+          "property_aliases_paths": {
+            "wrapper_padding_top": [
+              "wrapper_padding_top"
+            ]
+          }
+        },
+        "default": 10
+      },
+      {
+        "id": "e254be1d-74fd-417a-a0da-8a8e20ceaa99",
+        "name": "wrapper_padding_bottom",
+        "label": "Wrapper padding bottom (px)",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display": "slider",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "suffix": "px",
+        "aliases_mapping": {
+          "property_aliases_paths": {
+            "wrapper_padding_bottom": [
+              "wrapper_padding_bottom"
+            ]
+          }
+        },
+        "default": 10
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "type": "group",
+    "default": {
+      "wrapper_bg_color": {
+        "color": "#ffffff",
+        "opacity": 100
+      },
+      "wrapper_padding_top": 10,
+      "wrapper_padding_bottom": 10
+    }
+  }
+]

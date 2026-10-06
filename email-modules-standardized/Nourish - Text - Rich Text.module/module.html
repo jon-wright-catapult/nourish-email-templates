@@ -1,0 +1,59 @@
+{#
+  Nourish - Text - Rich Text
+  Freeform rich text on a single-layer coloured section.
+  Line height is derived from font size (+2px), so it isn't a separate field.
+#}
+
+{% set font_family = "FS Me, Arial" %}
+
+{% set st          = module.styles %}
+{% set section_bg  = st.section_bg_color.color or "#3e4681" %}
+{% set sec_top     = st.section_padding_top|int %}
+{% set sec_bottom  = st.section_padding_bottom|int %}
+
+{% set tp          = st.text_padding %}
+{% set pad_top     = tp.top|int %}
+{% set pad_right   = tp.right|int %}
+{% set pad_bottom  = tp.bottom|int %}
+{% set pad_left    = tp.left|int %}
+
+{% set text_color  = st.text_color.color or "#ffffff" %}
+{% set font_size   = st.font_size|int or 14 %}
+{% set line_height = font_size + 2 %}
+{% set align       = st.text_alignment or "left" %}
+
+<!-- SECTION START - Rich text -->
+<!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" bgcolor="{{ section_bg }}" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+<div style="background:{{ section_bg }};background-color:{{ section_bg }};margin:0px auto;max-width:600px;">
+  <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:{{ section_bg }};background-color:{{ section_bg }};width:100%;">
+    <tbody>
+      <tr>
+        <td style="direction:ltr;font-size:0px;padding:{{ sec_top }}px 20px {{ sec_bottom }}px;text-align:center;">
+          <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:560px;" ><![endif]-->
+          <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+            <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+              <tbody>
+                <tr>
+                  <td style="vertical-align:top;padding:0px;">
+                    <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
+                      <tbody>
+                        <tr>
+                          <td align="{{ align }}" style="font-size:0px;padding:{{ pad_top }}px {{ pad_right }}px {{ pad_bottom }}px {{ pad_left }}px;word-break:break-word;">
+                            <div style="font-family:{{ font_family }};font-size:{{ font_size }}px;font-weight:300;line-height:{{ line_height }}px;mso-line-height-rule:exactly;text-align:{{ align }};color:{{ text_color }};">{{ module.rich_text }}</div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]-->
+<!-- SECTION END - Rich text -->

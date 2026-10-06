@@ -1,0 +1,415 @@
+[
+  {
+    "id": "382b6637-834a-453e-82ca-2d2507bee212",
+    "name": "speakers",
+    "label": "Speakers",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": 1,
+      "max": 12,
+      "sorting_label_field": "speakers.last_name",
+      "default": 1
+    },
+    "children": [
+      {
+        "id": "82f950b9-9c01-457b-bda5-cd4e14a09df9",
+        "name": "photo",
+        "label": "Photo",
+        "required": false,
+        "locked": false,
+        "type": "image",
+        "responsive": false,
+        "resizable": false,
+        "show_loading": false,
+        "default": {
+          "src": "",
+          "alt": "",
+          "loading": "disabled"
+        }
+      },
+      {
+        "id": "7569aa17-83d7-4c2a-85f7-32b3f3a0c73c",
+        "name": "photo_link_url",
+        "label": "Photo link URL (optional)",
+        "required": false,
+        "locked": false,
+        "type": "link",
+        "supported_types": [
+          "EXTERNAL",
+          "FILE",
+          "EMAIL_ADDRESS",
+          "CONTENT"
+        ],
+        "show_advanced_rel_options": false,
+        "default": {
+          "url": {
+            "content_id": null,
+            "type": "EXTERNAL",
+            "href": ""
+          },
+          "open_in_new_tab": true,
+          "no_follow": false
+        }
+      },
+      {
+        "id": "a54653ca-0305-4534-a6af-4dac5eeaabfe",
+        "name": "first_name",
+        "label": "First name",
+        "required": false,
+        "locked": false,
+        "type": "text",
+        "allow_new_line": false,
+        "default": "First"
+      },
+      {
+        "id": "e25f70aa-cc75-4b4f-ae3b-79c50cc1617c",
+        "name": "last_name",
+        "label": "Last name",
+        "required": false,
+        "locked": false,
+        "type": "text",
+        "allow_new_line": false,
+        "default": "Last"
+      },
+      {
+        "id": "28aab4e9-28ea-48cd-8bc2-327024e49173",
+        "name": "job_title",
+        "label": "Job title",
+        "required": false,
+        "locked": false,
+        "type": "text",
+        "allow_new_line": false,
+        "default": "Job title"
+      },
+      {
+        "id": "e0bc2290-59ae-465c-8149-4c40434906cb",
+        "name": "company_display_type",
+        "label": "Company display",
+        "required": false,
+        "locked": false,
+        "type": "choice",
+        "display": "radio",
+        "choices": [
+          [
+            "logo",
+            "Logo"
+          ],
+          [
+            "text",
+            "Text"
+          ]
+        ],
+        "multiple": false,
+        "default": "text"
+      },
+      {
+        "id": "3b023973-3188-4cb9-a099-5d6098ccf73c",
+        "name": "company_logo",
+        "label": "Company logo",
+        "required": false,
+        "locked": false,
+        "type": "image",
+        "responsive": false,
+        "resizable": false,
+        "show_loading": false,
+        "visibility": {
+          "controlling_field_path": "speakers.company_display_type",
+          "controlling_value_regex": "logo",
+          "operator": "EQUAL"
+        },
+        "default": {
+          "src": "",
+          "alt": "",
+          "loading": "disabled"
+        }
+      },
+      {
+        "id": "ea829204-0c14-4a73-8706-1e3c7a2bc889",
+        "name": "company_logo_link_url",
+        "label": "Company logo link URL (optional)",
+        "required": false,
+        "locked": false,
+        "type": "link",
+        "supported_types": [
+          "EXTERNAL",
+          "FILE",
+          "EMAIL_ADDRESS",
+          "CONTENT"
+        ],
+        "show_advanced_rel_options": false,
+        "visibility": {
+          "controlling_field_path": "speakers.company_display_type",
+          "controlling_value_regex": "logo",
+          "operator": "EQUAL"
+        },
+        "default": {
+          "url": {
+            "content_id": null,
+            "type": "EXTERNAL",
+            "href": ""
+          },
+          "open_in_new_tab": true,
+          "no_follow": false
+        }
+      },
+      {
+        "id": "52f03209-5232-4150-a521-e1f05c223dd6",
+        "name": "company_name",
+        "label": "Company name",
+        "required": false,
+        "locked": false,
+        "type": "text",
+        "allow_new_line": false,
+        "visibility": {
+          "controlling_field_path": "speakers.company_display_type",
+          "controlling_value_regex": "text",
+          "operator": "EQUAL"
+        },
+        "default": "Company Name"
+      }
+    ],
+    "tab": "CONTENT",
+    "expanded": false,
+    "type": "group",
+    "default": [
+      {
+        "photo": {
+          "src": "",
+          "alt": "",
+          "loading": "disabled"
+        },
+        "photo_link_url": {
+          "url": {
+            "content_id": null,
+            "type": "EXTERNAL",
+            "href": ""
+          },
+          "open_in_new_tab": true,
+          "no_follow": false
+        },
+        "first_name": "First",
+        "last_name": "Last",
+        "job_title": "Job title",
+        "company_display_type": "text",
+        "company_logo": {
+          "src": "",
+          "alt": "",
+          "loading": "disabled"
+        },
+        "company_logo_link_url": {
+          "url": {
+            "content_id": null,
+            "type": "EXTERNAL",
+            "href": ""
+          },
+          "open_in_new_tab": true,
+          "no_follow": false
+        },
+        "company_name": "Company Name"
+      }
+    ]
+  },
+  {
+    "id": "c06e7d4b-63af-4db5-aa5d-c8b7be7ecd04",
+    "name": "styles",
+    "label": "Styles",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "723e7313-4360-4c3c-bc8e-f72176411b89",
+        "name": "section_bg_color",
+        "label": "Section background color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "aliases_mapping": {
+          "property_aliases_paths": {
+            "section_bg_color": [
+              "style.background_color"
+            ]
+          }
+        },
+        "default": {
+          "color": "#3e4681",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "52807e5e-9e01-48d0-847f-885c7175eb5a",
+        "name": "section_padding_top",
+        "label": "Section padding top (px)",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display": "slider",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "suffix": "px",
+        "default": 0
+      },
+      {
+        "id": "7605b3d7-59f3-406a-905d-3d0cf735b773",
+        "name": "section_padding_bottom",
+        "label": "Section padding bottom (px)",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display": "slider",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "suffix": "px",
+        "default": 20
+      },
+      {
+        "id": "3168e9cb-efae-4265-a790-3fd426b8c14b",
+        "name": "speaker_text_color",
+        "label": "Speaker text color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "aliases_mapping": {
+          "property_aliases_paths": {
+            "speaker_text_color": [
+              "speaker_text_color"
+            ]
+          }
+        },
+        "default": {
+          "color": "#ffffff",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "86ddc6e8-22bd-4d74-9852-e9d37c659141",
+        "name": "speaker_alignment",
+        "label": "Speaker alignment",
+        "required": false,
+        "locked": false,
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          [
+            "left",
+            "Left"
+          ],
+          [
+            "center",
+            "Center"
+          ]
+        ],
+        "multiple": false,
+        "help_text": "Controls how speakers are positioned within each row when there are fewer than 4 in that row.",
+        "aliases_mapping": {
+          "property_aliases_paths": {
+            "speaker_alignment": [
+              "alignment"
+            ]
+          }
+        },
+        "default": "center"
+      },
+      {
+        "id": "04bd5653-e93d-49fd-9e97-10b5969ecd10",
+        "name": "photo_alignment",
+        "label": "Photo alignment",
+        "required": false,
+        "locked": false,
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          [
+            "left",
+            "Left"
+          ],
+          [
+            "center",
+            "Center"
+          ],
+          [
+            "right",
+            "Right"
+          ]
+        ],
+        "multiple": false,
+        "default": "center"
+      },
+      {
+        "id": "afec35be-4399-4491-934d-15fff056cd61",
+        "name": "photo_width",
+        "label": "Photo width (px, max 132)",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display": "slider",
+        "min": 20,
+        "max": 132,
+        "step": 1,
+        "suffix": "px",
+        "default": 132
+      },
+      {
+        "id": "158d237b-9f89-475e-9df9-576f5082990d",
+        "name": "company_logo_alignment",
+        "label": "Company logo alignment",
+        "required": false,
+        "locked": false,
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          [
+            "left",
+            "Left"
+          ],
+          [
+            "center",
+            "Center"
+          ],
+          [
+            "right",
+            "Right"
+          ]
+        ],
+        "multiple": false,
+        "default": "center"
+      },
+      {
+        "id": "c446323f-0059-4504-905b-ecef7e1e76d1",
+        "name": "company_logo_width",
+        "label": "Company logo width (px, max 100)",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display": "slider",
+        "min": 20,
+        "max": 100,
+        "step": 1,
+        "suffix": "px",
+        "default": 100
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "type": "group",
+    "default": {
+      "section_bg_color": {
+        "color": "#3e4681",
+        "opacity": 100
+      },
+      "section_padding_top": 0,
+      "section_padding_bottom": 20,
+      "speaker_text_color": {
+        "color": "#ffffff",
+        "opacity": 100
+      },
+      "speaker_alignment": "center",
+      "photo_alignment": "center",
+      "photo_width": 132,
+      "company_logo_alignment": "center",
+      "company_logo_width": 100
+    }
+  }
+]

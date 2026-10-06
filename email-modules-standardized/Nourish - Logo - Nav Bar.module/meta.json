@@ -1,0 +1,19 @@
+{
+  "label": "Nourish - Logo - Nav Bar",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Logo on the left with up to four navigation links on the right.",
+  "content_types": [
+    "EMAIL"
+  ],
+  "host_template_types": [
+    "EMAIL"
+  ],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "module_id": 485119990004,
+  "is_available_for_new_content": true
+}

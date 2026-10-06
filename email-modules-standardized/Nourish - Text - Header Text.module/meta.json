@@ -1,0 +1,19 @@
+{
+  "label": "Nourish - Text - Header Text",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Standalone heading on a coloured section background.",
+  "content_types": [
+    "EMAIL"
+  ],
+  "host_template_types": [
+    "EMAIL"
+  ],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "module_id": 477165952188,
+  "is_available_for_new_content": true
+}

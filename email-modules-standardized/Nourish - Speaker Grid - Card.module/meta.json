@@ -1,0 +1,19 @@
+{
+  "label": "Nourish - Speaker Grid - Card",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Grid of 1-12 speakers inside one rounded card; rows of up to four are laid out automatically.",
+  "content_types": [
+    "EMAIL"
+  ],
+  "host_template_types": [
+    "EMAIL"
+  ],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "module_id": 475663501516,
+  "is_available_for_new_content": true
+}

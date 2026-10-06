@@ -1,0 +1,56 @@
+{#
+  Nourish - List - Single Column
+  Single-layer section: a list of text items, each with a bottom divider line.
+#}
+
+{# NOTE: this module has always used Montserrat, unlike the rest of the set (FS Me). Kept as-is. #}
+{% set font_family = "Montserrat, Arial" %}
+
+{% set st          = module.styles %}
+{% set section_bg  = st.section_bg_color.color or "#004038" %}
+{% set pad_top     = st.section_padding_top|int %}
+{% set pad_bottom  = st.section_padding_bottom|int %}
+{% set text_color  = st.text_color.color or "#FFFFFF" %}
+{% set line_color  = st.bottom_border_color.color or "#ecedee" %}
+
+<!-- SECTION START - List -->
+<!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" bgcolor="{{ section_bg }}" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+<div style="background:{{ section_bg }};background-color:{{ section_bg }};margin:0px auto;max-width:600px;">
+  <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:{{ section_bg }};background-color:{{ section_bg }};width:100%;">
+    <tbody>
+      <tr>
+        <td style="direction:ltr;font-size:0px;padding:{{ pad_top }}px 5px {{ pad_bottom }}px;text-align:center;">
+          <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:590px;" ><![endif]-->
+          <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+            <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+              <tbody>
+                <tr>
+                  <td style="vertical-align:top;padding:0px;">
+                    <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
+                      <tbody>
+                        <tr>
+                          <td align="left" style="font-size:0px;padding:0px 25px;word-break:break-word;">
+                            <table cellpadding="0" cellspacing="0" width="100%" border="0" style="color:{{ text_color }};font-family:{{ font_family }};font-size:14px;line-height:22px;table-layout:auto;width:100%;border:none;">
+                              {% for item in module.list_item %}
+                              <tr style="border-bottom:1px solid {{ line_color }};color:{{ text_color }}">
+                                <td style="border-bottom:1px solid {{ line_color }};padding:10px 10px 10px 0;text-align:left">{{ item }}</td>
+                              </tr>
+                              {% endfor %}
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]-->
+<!-- SECTION END - List -->

@@ -1,0 +1,19 @@
+{
+  "label": "Nourish - Cards - 2 column",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "One card split into two fixed columns, each with an optional image, text and button.",
+  "content_types": [
+    "EMAIL"
+  ],
+  "host_template_types": [
+    "EMAIL"
+  ],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "module_id": 477958807769,
+  "is_available_for_new_content": true
+}

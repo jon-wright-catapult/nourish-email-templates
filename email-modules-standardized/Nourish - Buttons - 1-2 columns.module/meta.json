@@ -1,0 +1,15 @@
+{
+  "label": "Nourish - Buttons - 1-2 columns",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "One or two side-by-side pill buttons on a coloured section background; layout switches automatically with the number of buttons.",
+  "content_types": ["EMAIL"],
+  "host_template_types": ["EMAIL"],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "module_id": 477096360162,
+  "is_available_for_new_content": true
+}

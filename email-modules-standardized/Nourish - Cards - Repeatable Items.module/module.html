@@ -1,0 +1,139 @@
+{#
+  Nourish - Cards - Repeatable Items
+  One shared card with any number of stacked items inside it.
+  Card bg/border are module-scope (one card); everything per item is in the repeater.
+#}
+
+{% set font_family = "FS Me, Arial" %}
+
+{% set st          = module.styles %}
+{% set wrapper_bg  = st.wrapper_bg_color.color or "#ffffff" %}
+{% set pad_top     = st.wrapper_padding_top|int %}
+{% set pad_bottom  = st.wrapper_padding_bottom|int %}
+{% set card_bg     = st.card_bg_color.color or "#E0F5F5" %}
+{% set card_border = st.card_border_color.color or "#66CCCC" %}
+
+{# Content width inside the card: 528px column - 2 x 20px padding. Caps image + button. #}
+{% set max_content_width = 488 %}
+{% set min_btn_width = 100 %}
+
+<!-- SECTION START - 1 Card - 1 col -->
+<!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" bgcolor="{{ wrapper_bg }}" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+<div style="background:{{ wrapper_bg }};background-color:{{ wrapper_bg }};margin:0px auto;max-width:600px;">
+  <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:{{ wrapper_bg }};background-color:{{ wrapper_bg }};width:100%;">
+    <tbody>
+      <tr>
+        <td style="direction:ltr;font-size:0px;padding:{{ pad_top }}px 30px {{ pad_bottom }}px 30px;text-align:center;">
+          <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" width="600px" ><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:540px;" width="540" bgcolor="{{ card_bg }}" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+          <div style="background:{{ card_bg }};background-color:{{ card_bg }};margin:0px auto;max-width:540px;border-radius:20px;overflow:hidden;">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:{{ card_bg }};background-color:{{ card_bg }};width:100%;border-collapse:separate;">
+              <tbody>
+                <tr>
+                  <td style="border:1px solid {{ card_border }};border-radius:20px;direction:ltr;font-size:0px;padding:5px;text-align:center;">
+                    <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:middle;width:528px;" ><![endif]-->
+                    <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:middle;width:100%;">
+                      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="border-collapse:separate;">
+                        <tbody>
+                          <tr>
+                            <td style="background-color:{{ card_bg }};border-radius:20px 0px 0px 20px;vertical-align:middle;border-collapse:separate;padding:20px;">
+                              <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
+                                <tbody>
+
+{% for item in module.items %}
+                                  <!-- Item {{ loop.index }} start -->
+  {% if item.show_rich_text != false %}
+                                  <tr>
+                                    <td align="left" style="font-size:0px;padding:0px;word-break:break-word;">
+                                      <div style="font-family:{{ font_family }};font-size:14px;font-weight:300;line-height:16px;text-align:left;color:#000000;">{{ item.rich_text }}</div>
+                                    </td>
+                                  </tr>
+  {% endif %}
+
+  {% if item.show_image and item.image.src %}
+    {% set img_w = item.image_width|int %}
+    {% if img_w < 1 or img_w > max_content_width %}{% set img_w = max_content_width %}{% endif %}
+    {% set img_href = item.image_link_url.url.href %}
+                                  <tr>
+                                    <td align="{{ item.image_alignment or 'left' }}" style="font-size:0px;padding:0px;word-break:break-word;">
+                                      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;">
+                                        <tbody>
+                                          <tr>
+                                            <td style="width:{{ img_w }}px;">
+                                              {% if img_href %}<a href="{{ img_href }}" target="_blank" style="text-decoration:none;">{% endif %}<img alt="{{ item.image.alt|escape_attr }}" src="{{ item.image.src }}" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:14px;" width="{{ img_w }}" height="auto" />{% if img_href %}</a>{% endif %}
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+  {% endif %}
+
+  {% if item.show_button %}
+    {% set btn_bg     = item.button_bg_color.color or "#66cccc" %}
+    {% set btn_border = item.button_border_color.color or btn_bg %}
+    {% set btn_text   = item.button_text_color.color or "#ffffff" %}
+    {% set btn_weight = item.button_font_weight or "normal" %}
+    {% set btn_radius = item.button_border_radius|int %}
+    {% set btn_href   = item.button_url.url.href or "#" %}
+    {# button_full_width (boolean) is the pre-standardization field; fall back to it on older instances #}
+    {% set btn_mode   = item.button_width_mode or ("full" if item.button_full_width else "fixed") %}
+    {% set btn_w = item.button_fixed_width|int %}
+    {% if btn_w < 1 %}{% set btn_w = 240 %}{% endif %}
+    {% if btn_w > max_content_width %}{% set btn_w = max_content_width %}{% endif %}
+    {% if btn_w < min_btn_width %}{% set btn_w = min_btn_width %}{% endif %}
+    {% if btn_mode == "full" %}
+      {% set btn_table_w = "100%" %}{% set btn_a_w = "" %}
+    {% else %}
+      {% set btn_table_w = btn_w ~ "px" %}{% set btn_a_w = "width:" ~ (btn_w - 52) ~ "px;" %}
+    {% endif %}
+                                  <tr>
+                                    <td align="{{ item.button_alignment or 'left' }}" style="font-size:0px;padding:0px;word-break:break-word;">
+                                      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;width:{{ btn_table_w }};line-height:100%;">
+                                        <tbody>
+                                          <tr>
+                                            <td align="center" bgcolor="{{ btn_bg }}" role="presentation" style="border:1px solid {{ btn_border }};border-radius:{{ btn_radius }}px;cursor:auto;mso-padding-alt:10px 25px;background:{{ btn_bg }};" valign="middle">
+                                              <a href="{{ btn_href }}" style="display:inline-block;{{ btn_a_w }}background:{{ btn_bg }};color:{{ btn_text }};font-family:{{ font_family }};font-size:14px;font-weight:{{ btn_weight }};line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:{{ btn_radius }}px;" target="_blank"> {{ item.button_cta_text|escape }} </a>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+  {% endif %}
+
+  {% if item.show_divider %}
+    {% set div_color = item.divider_color.color or "#66cccc" %}
+    {% set div_style = item.divider_style or "dotted" %}
+                                  <tr>
+                                    <td align="center" style="font-size:0px;padding:0px;word-break:break-word;">
+                                      <p style="border-top:{{ div_style }} 1px {{ div_color }};font-size:1px;margin:0px auto;width:100%;">
+                                      </p>
+                                      <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:{{ div_style }} 1px {{ div_color }};font-size:1px;margin:0px auto;width:488px;" role="presentation" width="488px" ><tr><td style="height:0;line-height:0;"> &nbsp;
+</td></tr></table><![endif]-->
+                                    </td>
+                                  </tr>
+  {% endif %}
+                                  <!-- Item {{ loop.index }} end -->
+{% endfor %}
+
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!--[if mso | IE]></td></tr></table><![endif]-->
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--[if mso | IE]></td></tr></table></td></tr></table><![endif]-->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]-->
+<!-- SECTION END - 1 Card - 1 col -->

@@ -1,0 +1,19 @@
+{
+  "label": "Nourish - Text - Rich Text",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Freeform rich text block on a coloured section background.",
+  "content_types": [
+    "EMAIL"
+  ],
+  "host_template_types": [
+    "EMAIL"
+  ],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "module_id": 477219638474,
+  "is_available_for_new_content": true
+}
