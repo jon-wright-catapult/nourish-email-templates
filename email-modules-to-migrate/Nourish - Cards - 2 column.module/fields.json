@@ -1,0 +1,572 @@
+[ {
+  "id" : "cd2195c2-1734-4792-b6d7-84872a69727f",
+  "name" : "columns",
+  "label" : "Columns",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 2,
+    "max" : 2,
+    "sorting_label_field" : "columns.button_cta_text",
+    "default" : 2
+  },
+  "children" : [ {
+    "id" : "59857cd8-c3c4-44b3-89d1-f404c5a4339b",
+    "name" : "show_image",
+    "label" : "Show image",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "17d222f2-37aa-478a-98cf-fbeb51cf1849",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "columns.show_image",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "https://149327226.fs1.hubspotusercontent-eu1.net/hubfs/149327226/example-speaker-05-purple-circle.png",
+      "alt" : "example-speaker-05-purple-circle",
+      "loading" : "disabled",
+      "width" : 200,
+      "height" : 200
+    }
+  }, {
+    "id" : "f2e07883-01dd-4b9b-b3fd-8ef7148d8b85",
+    "name" : "image_link_url",
+    "label" : "Image link URL (optional)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "columns.show_image",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "FILE", "EMAIL_ADDRESS", "CONTENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "1e52937a-335c-419b-949f-4cbecf395aa8",
+    "name" : "image_alignment",
+    "label" : "Image alignment",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "columns.show_image",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "center"
+  }, {
+    "id" : "6926b067-9c0d-461c-a053-1b407cd6591b",
+    "name" : "image_width",
+    "label" : "Image width (px, max 224)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "columns.show_image",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "slider",
+    "min" : 20,
+    "max" : 224,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 200
+  }, {
+    "id" : "ec3f4451-01f8-47d7-9d5b-c3ee60887894",
+    "name" : "show_rich_text",
+    "label" : "Show text",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "841979e5-adfb-43ac-beb2-34f7ed3b8c96",
+    "name" : "rich_text",
+    "label" : "Rich text",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "columns.show_rich_text",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p><span style=\"font-size:18px;font-weight:600\">Highlighted speaker</span></p><p>We will explore how place-based leadership, strategic investment, and partnerships with high-potential businesses can unlock long-term prosperity</p>"
+  }, {
+    "id" : "c9f23b4a-4a84-4d6b-9ac6-65a9fb81d191",
+    "name" : "show_button",
+    "label" : "Show button",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "212c8d28-0921-4825-95f3-21f7c2077a10",
+    "name" : "button_cta_text",
+    "label" : "Button CTA text",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "columns.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Save your place"
+  }, {
+    "id" : "34f00ef8-c24e-41cb-9432-6a8595214868",
+    "name" : "button_url",
+    "label" : "Button URL",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "columns.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "FILE", "EMAIL_ADDRESS", "CONTENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : "https://nourishcare.com/"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "120b19c1-388f-4d22-8b1d-15679e7d2923",
+    "name" : "button_alignment",
+    "label" : "Button alignment",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "columns.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "center"
+  }, {
+    "id" : "37e6d78e-163e-455d-856d-1e75e14c19ac",
+    "name" : "button_width_mode",
+    "label" : "Button width",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "columns.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "full", "Full width" ], [ "fixed", "Fixed width" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "fixed"
+  }, {
+    "id" : "1eb809df-3454-45ac-80ad-88779ac64e99",
+    "name" : "button_fixed_width",
+    "label" : "Button fixed width (px, max 224)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "columns.button_width_mode",
+      "controlling_value_regex" : "fixed",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "slider",
+    "min" : 100,
+    "max" : 224,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 200
+  }, {
+    "id" : "910dbdf9-ae33-4558-ad76-947706bab8b7",
+    "name" : "button_bg_color",
+    "label" : "Button background color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "columns.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "84fe7b75-6bf0-44d3-ad60-b4af23491241",
+    "name" : "button_text_color",
+    "label" : "Button text color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "columns.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "2cec2a92-2d65-4e64-8e59-235e4c284c95",
+    "name" : "button_border_color",
+    "label" : "Button border color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "columns.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "c8712d67-80be-4187-8809-055fad913c02",
+    "name" : "button_font_weight",
+    "label" : "Button font weight",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "columns.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "normal", "Normal" ], [ "bold", "Bold" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "normal"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "show_image" : true,
+    "image" : {
+      "src" : "https://149327226.fs1.hubspotusercontent-eu1.net/hubfs/149327226/example-speaker-05-purple-circle.png",
+      "alt" : "example-speaker-05-purple-circle",
+      "loading" : "disabled",
+      "width" : 200,
+      "height" : 200
+    },
+    "image_link_url" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    },
+    "image_alignment" : "center",
+    "image_width" : 200,
+    "show_rich_text" : true,
+    "rich_text" : "<p><span style=\"font-size:18px;font-weight:600\">Highlighted speaker</span></p><p>We will explore how place-based leadership, strategic investment, and partnerships with high-potential businesses can unlock long-term prosperity</p>",
+    "show_button" : true,
+    "button_cta_text" : "Save your place",
+    "button_url" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : "https://nourishcare.com/"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    },
+    "button_alignment" : "center",
+    "button_width_mode" : "fixed",
+    "button_fixed_width" : 200,
+    "button_bg_color" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    },
+    "button_text_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "button_border_color" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    },
+    "button_font_weight" : "normal"
+  }, {
+    "show_image" : true,
+    "image" : {
+      "src" : "https://149327226.fs1.hubspotusercontent-eu1.net/hubfs/149327226/example-speaker-05-purple-circle.png",
+      "alt" : "example-speaker-05-purple-circle",
+      "loading" : "disabled",
+      "width" : 200,
+      "height" : 200
+    },
+    "image_link_url" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    },
+    "image_alignment" : "center",
+    "image_width" : 200,
+    "show_rich_text" : true,
+    "rich_text" : "<p><span style=\"font-size:18px;font-weight:600\">Highlighted speaker</span></p><p>We will explore how place-based leadership, strategic investment, and partnerships with high-potential businesses can unlock long-term prosperity</p>",
+    "show_button" : true,
+    "button_cta_text" : "Save your place",
+    "button_url" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : "https://nourishcare.com/"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    },
+    "button_alignment" : "center",
+    "button_width_mode" : "fixed",
+    "button_fixed_width" : 200,
+    "button_bg_color" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    },
+    "button_text_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "button_border_color" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    },
+    "button_font_weight" : "normal"
+  } ]
+}, {
+  "id" : "a9bbf603-d02a-46bd-9ad6-eb1d333d8e1b",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "ccfa6ad3-44de-4804-bc87-b629bcfb4239",
+    "name" : "wrapper_bg_color",
+    "label" : "Wrapper background color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "wrapper_bg_color" : [ "wrapper_bg_color" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "c2474ef0-f263-4eca-a53e-896ccf86085b",
+    "name" : "wrapper_padding_top",
+    "label" : "Wrapper padding top (px)",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "wrapper_padding_top" : [ "wrapper_padding_top" ]
+      }
+    },
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 10
+  }, {
+    "id" : "a3821757-f8d1-4a85-9fb1-51d5c0825583",
+    "name" : "wrapper_padding_bottom",
+    "label" : "Wrapper padding bottom (px)",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "wrapper_padding_bottom" : [ "wrapper_padding_bottom" ]
+      }
+    },
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 20
+  }, {
+    "id" : "bb49a9e8-d98a-48c8-9793-13e923b67f83",
+    "name" : "card_bg_color",
+    "label" : "Card background color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "card_bg_color" : [ "card_bg_color" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ECEDF2",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "b9f5c96d-5ce0-4e97-afff-9a56923f5fcb",
+    "name" : "card_border_color",
+    "label" : "Card border color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "card_border_color" : [ "card_border_color" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#3e4681",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "wrapper_bg_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "wrapper_padding_top" : 10,
+    "wrapper_padding_bottom" : 20,
+    "card_bg_color" : {
+      "color" : "#ECEDF2",
+      "opacity" : 100
+    },
+    "card_border_color" : {
+      "color" : "#3e4681",
+      "opacity" : 100
+    }
+  }
+} ]

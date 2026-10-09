@@ -1,0 +1,282 @@
+[ {
+  "id" : "873a2216-0377-4418-9b59-f299b21b97e0",
+  "name" : "card_text",
+  "label" : "Card text",
+  "required" : true,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<span style=\"font-size:18px;font-weight:600\">Get your virtual ticket</span><br /> Watch all of these sessions, network with other attendees and get access to the content on-demand. Register today."
+}, {
+  "id" : "009b4a74-440e-4ea4-8613-a30362a80408",
+  "name" : "button_cta_text",
+  "label" : "Button CTA text",
+  "required" : true,
+  "locked" : false,
+  "aliases_mapping" : {
+    "property_aliases_paths" : {
+      "button_cta_text" : [ "button.cta_text" ]
+    }
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Save your place"
+}, {
+  "id" : "8f0ab9ce-6e22-49af-b2eb-e83f90d7c99b",
+  "name" : "button_url",
+  "label" : "Button URL",
+  "required" : true,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "FILE", "EMAIL_ADDRESS", "CONTENT" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : "https://nourishcare.com/"
+    },
+    "open_in_new_tab" : true,
+    "no_follow" : false
+  }
+}, {
+  "id" : "3a1c75f1-90fc-47e1-b440-a948bc6e3ad5",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "c09fb002-d5f7-4da6-81af-d99c4b79a8da",
+    "name" : "wrapper_bg_color",
+    "label" : "Wrapper background color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "wrapper_bg_color" : [ "wrapper_bg" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "8479c700-d8c0-4e96-9943-4fa6c60f71f8",
+    "name" : "wrapper_padding_top",
+    "label" : "Wrapper padding top (px)",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 10
+  }, {
+    "id" : "f81ccccd-e11b-46be-aac9-67b70651009d",
+    "name" : "wrapper_padding_bottom",
+    "label" : "Wrapper padding bottom (px)",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 20
+  }, {
+    "id" : "7dadceae-3c4e-4099-a941-1f14e8690444",
+    "name" : "card_bg_color",
+    "label" : "Card background color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "card_bg_color" : [ "section_bg" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#E0F5F5",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "6f6cdfdd-22dd-4f4b-a576-bfd2eda80c09",
+    "name" : "card_border_color",
+    "label" : "Card border color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "card_border_color" : [ "section_border" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#66CCCC",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "12888ea1-dfb4-48a4-8b33-7a2535d92664",
+    "name" : "button_alignment",
+    "label" : "Button alignment",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "left"
+  }, {
+    "id" : "3400d00b-2d47-4c89-b7b4-9fd733a951c8",
+    "name" : "button_width_mode",
+    "label" : "Button width",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "full", "Full width" ], [ "fixed", "Fixed width" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "fixed"
+  }, {
+    "id" : "92828091-86bf-414a-8bbf-00be7fd4f615",
+    "name" : "button_fixed_width",
+    "label" : "Button fixed width (px, max 190)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "styles.button_width_mode",
+      "controlling_value_regex" : "fixed",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "slider",
+    "min" : 100,
+    "max" : 190,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 190
+  }, {
+    "id" : "8e8e300e-9a5f-4934-9032-a3a5ff0dee2d",
+    "name" : "button_bg_color",
+    "label" : "Button background color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "button_bg_color" : [ "button.button_bg" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "36f3d3ff-b5d9-4883-a3b2-d12c1e749ba4",
+    "name" : "button_text_color",
+    "label" : "Button text color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "button_text_color" : [ "button.button_text_color" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "22ca9658-8eb2-46fc-9343-9cb5306f355b",
+    "name" : "button_border_color",
+    "label" : "Button border color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "button_border_color" : [ "button.button_border" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "94fc18a4-b704-4fe8-b17f-32449e213ad5",
+    "name" : "button_font_weight",
+    "label" : "Button font weight",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "normal", "Normal" ], [ "bold", "Bold" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "normal"
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "wrapper_bg_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "wrapper_padding_top" : 10,
+    "wrapper_padding_bottom" : 20,
+    "card_bg_color" : {
+      "color" : "#E0F5F5",
+      "opacity" : 100
+    },
+    "card_border_color" : {
+      "color" : "#66CCCC",
+      "opacity" : 100
+    },
+    "button_alignment" : "left",
+    "button_width_mode" : "fixed",
+    "button_fixed_width" : 190,
+    "button_bg_color" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    },
+    "button_text_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "button_border_color" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    },
+    "button_font_weight" : "normal"
+  }
+} ]

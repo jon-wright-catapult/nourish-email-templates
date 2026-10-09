@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "content_types" : [ "EMAIL" ],
+  "host_template_types" : [ "EMAIL" ],
+  "module_id" : 485891223754,
+  "label" : "Nourish - Speaker Grid - Standard",
+  "is_available_for_new_content" : true
+}

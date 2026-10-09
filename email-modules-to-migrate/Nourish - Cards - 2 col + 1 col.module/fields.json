@@ -1,0 +1,437 @@
+[ {
+  "id" : "efe064e8-d958-47da-b280-974bb640e274",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "fd5379d4-251e-4f08-9c27-85975b6cd15b",
+    "name" : "wrapper_bg_color",
+    "label" : "Wrapper background color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "625f3018-93c9-42e4-a36b-771ef64196cb",
+    "name" : "wrapper_padding_top",
+    "label" : "Wrapper padding top (px)",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 10
+  }, {
+    "id" : "528f5e96-31c5-4cc4-a95c-1a1367ddc61f",
+    "name" : "wrapper_padding_bottom",
+    "label" : "Wrapper padding bottom (px)",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 20
+  }, {
+    "id" : "a9ce25e5-795b-4104-b6c8-a7ada03048bc",
+    "name" : "card_bg_color",
+    "label" : "Card background color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#F3E9FF",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "0a6ead75-d976-4122-9549-f14466937c5e",
+    "name" : "card_border_color",
+    "label" : "Card border color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#0F1438",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "70b4f129-7a1c-420e-972b-54ef3a90f443",
+    "name" : "header_alignment",
+    "label" : "Header alignment",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "left"
+  }, {
+    "id" : "f6959ad8-18e9-478f-a32d-5f470f856038",
+    "name" : "header_text_color",
+    "label" : "Header text color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#0F1438",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "37e380d0-71ea-4aeb-8c10-55f31337fe01",
+    "name" : "header_font_size",
+    "label" : "Header font size (px)",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 14,
+    "max" : 48,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 32
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "wrapper_bg_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "wrapper_padding_top" : 10,
+    "wrapper_padding_bottom" : 20,
+    "card_bg_color" : {
+      "color" : "#F3E9FF",
+      "opacity" : 100
+    },
+    "card_border_color" : {
+      "color" : "#0F1438",
+      "opacity" : 100
+    },
+    "header_alignment" : "left",
+    "header_text_color" : {
+      "color" : "#0F1438",
+      "opacity" : 100
+    },
+    "header_font_size" : 32
+  }
+}, {
+  "id" : "193905ba-e0fb-480a-bbf4-86a35fcb0be3",
+  "name" : "header_text",
+  "label" : "Header text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "See what's on the schedule for Nourish Care 2026"
+}, {
+  "id" : "d09a6d34-062a-4d6f-ad7c-a38527d2f3dd",
+  "name" : "image",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : false,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "src" : "https://149327226.fs1.hubspotusercontent-eu1.net/hubfs/149327226/Nourish-event-stand-03-tearddrop.png",
+    "alt" : "",
+    "loading" : "disabled"
+  }
+}, {
+  "id" : "920e40fe-65b3-43f9-9051-e86282d18486",
+  "name" : "image_link_url",
+  "label" : "Image link URL",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "FILE", "EMAIL_ADDRESS", "CONTENT" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : ""
+    },
+    "open_in_new_tab" : true,
+    "no_follow" : false
+  }
+}, {
+  "id" : "b59933e7-05f8-4fae-b80f-07092e046bad",
+  "name" : "image_alignment",
+  "label" : "Image alignment",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "center"
+}, {
+  "id" : "e064be46-59f5-4b89-bc7e-ce7c3f9c0d26",
+  "name" : "image_width",
+  "label" : "Image width (px)",
+  "required" : false,
+  "locked" : false,
+  "display" : "slider",
+  "min" : 40,
+  "max" : 230,
+  "step" : 1,
+  "type" : "number",
+  "display_width" : null,
+  "default" : 150
+}, {
+  "id" : "15ed50e0-bdb4-4bd2-b22c-e6fc512da855",
+  "name" : "show_rich_text_bottom",
+  "label" : "Show body text",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "21388087-60b0-4cf0-bd55-eab9cb685883",
+  "name" : "rich_text_bottom",
+  "label" : "Body rich text",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_rich_text_bottom",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p><span style=\"font-size:18px;font-weight:600\">The role of civic and business leadership in unlocking connectivity and growth in city regions</span><br /> We will explore how place-based leadership, strategic investment, and partnerships with high-potential businesses can unlock long-term prosperity</p>"
+}, {
+  "id" : "1f38ab03-61c4-46a5-9962-80789fd57d08",
+  "name" : "show_button",
+  "label" : "Show button",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "b113943b-d6f8-4f0d-9640-e0743ec24b68",
+  "name" : "button_alignment",
+  "label" : "Button alignment",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_button",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "display" : "select",
+  "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "left"
+}, {
+  "id" : "905f0d2d-59dd-4f54-bc29-13be46289c25",
+  "name" : "button_bg_color",
+  "label" : "Button background color",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_button",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#0F1438",
+    "opacity" : 100
+  }
+}, {
+  "id" : "2891bb94-bb29-4298-af8f-4b6d541b5f7c",
+  "name" : "button_text_color",
+  "label" : "Button text color",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_button",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#ffffff",
+    "opacity" : 100
+  }
+}, {
+  "id" : "646a019d-6293-44b5-9adf-0d3011243bce",
+  "name" : "button_border_color",
+  "label" : "Button border color",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_button",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#0F1438",
+    "opacity" : 100
+  }
+}, {
+  "id" : "536a2abd-4db7-46f7-bda5-bc0a186870e7",
+  "name" : "button_font_weight",
+  "label" : "Button font weight",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_button",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "display" : "select",
+  "choices" : [ [ "normal", "Normal" ], [ "bold", "Bold" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "normal"
+}, {
+  "id" : "78dd4de7-0f2a-4fad-8575-9ff62a0f0dfd",
+  "name" : "button_cta_text",
+  "label" : "Button CTA text",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_button",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Save your place"
+}, {
+  "id" : "b4492418-145c-4714-964c-80f7a4eb805a",
+  "name" : "button_url",
+  "label" : "Button URL",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_button",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "supported_types" : [ "EXTERNAL", "FILE", "EMAIL_ADDRESS", "CONTENT" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : "https://nourishcare.com/"
+    },
+    "open_in_new_tab" : true,
+    "no_follow" : false
+  }
+}, {
+  "id" : "1983d303-dac8-453c-9c30-5cd48eb9871c",
+  "name" : "button_width_mode",
+  "label" : "Button width",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_button",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "display" : "select",
+  "choices" : [ [ "full", "Full width" ], [ "fixed", "Fixed width" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "full"
+}, {
+  "id" : "388de7d7-b1cd-4a44-a7c2-dacadfb55944",
+  "name" : "button_fixed_width",
+  "label" : "Button fixed width (px)",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "button_width_mode",
+    "controlling_value_regex" : "fixed",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "display" : "slider",
+  "min" : 60,
+  "max" : 240,
+  "step" : 1,
+  "type" : "number",
+  "display_width" : null,
+  "default" : 150
+} ]

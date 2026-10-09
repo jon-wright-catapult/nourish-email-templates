@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "content_types" : [ "EMAIL" ],
+  "host_template_types" : [ "EMAIL" ],
+  "module_id" : 485869721789,
+  "label" : "Ready - Nourish - List - Single Column",
+  "is_available_for_new_content" : true
+}

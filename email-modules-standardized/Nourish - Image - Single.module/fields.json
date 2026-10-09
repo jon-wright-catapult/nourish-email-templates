@@ -1,0 +1,128 @@
+[
+  {
+    "id": "b538f5bc-35df-4e56-9cd7-20e815cfc3ac",
+    "name": "image",
+    "label": "Image",
+    "required": false,
+    "locked": false,
+    "responsive": false,
+    "resizable": false,
+    "show_loading": false,
+    "type": "image",
+    "default": {
+      "src": "https://149327226.fs1.hubspotusercontent-eu1.net/hubfs/149327226/freehand-line-banner-wide-0F1438-bottom.png",
+      "alt": "",
+      "loading": "disabled"
+    }
+  },
+  {
+    "id": "d957aa72-e934-44e6-b02b-54c459a2b24d",
+    "name": "image_link_url",
+    "label": "Image link URL",
+    "required": false,
+    "locked": false,
+    "supported_types": ["EXTERNAL", "FILE", "EMAIL_ADDRESS", "CONTENT"],
+    "type": "link",
+    "default": {
+      "url": { "content_id": null, "type": "EXTERNAL", "href": "https://nourishcare.com/" },
+      "open_in_new_tab": true,
+      "no_follow": false
+    }
+  },
+  {
+    "name": "styles",
+    "label": "Styles",
+    "tab": "STYLE",
+    "type": "group",
+    "children": [
+      {
+        "id": "43c5a428-c560-4b42-b66a-084f3bdf1a73",
+        "name": "section_bg_color",
+        "label": "Section background color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "default": { "color": "#FBFAF9", "opacity": 100 }
+      },
+      {
+        "id": "978809ae-2163-4a56-a44a-e9dcd414b5ee",
+        "name": "section_padding_top",
+        "label": "Section padding top (px)",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display": "slider",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0
+      },
+      {
+        "id": "d70b98b7-81bb-4d2b-ba41-37bb818e4569",
+        "name": "section_padding_bottom",
+        "label": "Section padding bottom (px)",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display": "slider",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0
+      },
+      {
+        "id": "8bd11e03-f0de-4af2-abee-0b89861a0c02",
+        "name": "section_padding_left",
+        "label": "Section padding left (px)",
+        "help_text": "Reduces the space available for the image. Image width is capped at 600 minus left and right padding.",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display": "slider",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 20
+      },
+      {
+        "id": "af957d2e-8ec8-46bf-8021-f5a345f0f58c",
+        "name": "section_padding_right",
+        "label": "Section padding right (px)",
+        "help_text": "Reduces the space available for the image. Image width is capped at 600 minus left and right padding.",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display": "slider",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 20
+      },
+      {
+        "id": "48bd54e1-9a14-4d47-bac5-2674f218c68c",
+        "name": "image_alignment",
+        "label": "Image alignment",
+        "required": false,
+        "locked": false,
+        "type": "choice",
+        "display": "select",
+        "choices": [["left", "Left"], ["center", "Center"], ["right", "Right"]],
+        "default": "center"
+      },
+      {
+        "id": "3a888a69-9278-4213-9773-9236a8083585",
+        "name": "image_width",
+        "label": "Image width (px)",
+        "help_text": "Capped at the available width (600 minus left and right section padding).",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display": "slider",
+        "min": 1,
+        "max": 600,
+        "step": 1,
+        "default": 560
+      }
+    ]
+  }
+]

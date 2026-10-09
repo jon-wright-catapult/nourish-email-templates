@@ -1,0 +1,84 @@
+{% set font_family = "FS Me, Arial" %}
+
+{% set s = module.styles %}
+{% set bg_color = s.section_bg_color.color or "#0F1438" %}
+{% set pad_top = s.section_padding_top|int %}
+{% set pad_bottom = s.section_padding_bottom|int %}
+{% set icon_align = s.image_alignment or "center" %}
+
+{# Icon colour picks the file: <network>_original_<white|black>.png #}
+{% set icon_color = s.icon_color or "white" %}
+{% set icon_base = "https://choose.nourishcare.com/hs/hsstatic/TemplateAssets/static-1.262/img/hs_default_template_images/modules/Follow+Me+-+Email/" %}
+{% set network_names = {"linkedin": "LinkedIn", "facebook": "Facebook", "youtube": "YouTube", "instagram": "Instagram", "tiktok": "TikTok", "pinterest": "Pinterest", "twitter": "Twitter"} %}
+
+{# Icon size: clamp to the field's range; circle radius = half + 5 (25px at 40px, as in the source) #}
+{% set icon_w = s.image_width|int %}
+{% if not icon_w or icon_w > 64 or icon_w < 20 %}
+  {% set icon_w = 40 %}
+{% endif %}
+{% set icon_radius = (icon_w / 2)|int + 5 %}
+
+<!-- SECTION  - Social -->
+    <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" bgcolor="{{ bg_color }}" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+    <div style="background:{{ bg_color }};background-color:{{ bg_color }};margin:0px auto;max-width:600px;">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:{{ bg_color }};background-color:{{ bg_color }};width:100%;">
+        <tbody>
+          <tr>
+            <td style="direction:ltr;font-size:0px;padding:{{ pad_top }}px 0px {{ pad_bottom }}px 0px;text-align:center;">
+              <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:600px;" ><![endif]-->
+              <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+                <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                  <tbody>
+                    <tr>
+                      <td style="vertical-align:top;padding:0px;">
+                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
+                          <tbody>
+                            <tr>
+                              <td align="{{ icon_align }}" style="font-size:0px;padding:10px;word-break:break-word;">
+                                {% for item in module.icons %}
+                                {% set network = item.network or "linkedin" %}
+                                {% if loop.first %}
+                                <!--[if mso | IE]><table align="{{ icon_align }}" border="0" cellpadding="0" cellspacing="0" role="presentation" ><tr><td><![endif]-->
+                                {% else %}
+                                <!--[if mso | IE]></td><td><![endif]-->
+                                {% endif %}
+                                <table align="{{ icon_align }}" border="0" cellpadding="0" cellspacing="0" role="presentation" style="float:none;display:inline-table;">
+                                  <tbody>
+                                    <tr>
+                                      <td style="padding:4px;vertical-align:middle;">
+                                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:{{ bg_color }};border-radius:{{ icon_radius }}px;width:{{ icon_w }}px;">
+                                          <tbody>
+                                            <tr>
+                                              <td style="font-size:0;height:{{ icon_w }}px;vertical-align:middle;width:{{ icon_w }}px;">
+                                                {% if item.icon_url.url.href %}<a href="{{ item.icon_url.url.href|escape_attr }}" target="_blank">{% endif %}
+                                                  <img alt="{{ network_names[network]|escape_attr }}" src="{{ icon_base }}{{ network }}_original_{{ icon_color }}.png" style="border:0;border-radius:{{ icon_radius }}px;display:block;" width="{{ icon_w }}" />
+                                                {% if item.icon_url.url.href %}</a>{% endif %}
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                {% if loop.last %}
+                                <!--[if mso | IE]></td></tr></table><![endif]-->
+                                {% endif %}
+                                {% endfor %}
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!--[if mso | IE]></td></tr></table><![endif]-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--[if mso | IE]></td></tr></table><![endif]-->
+<!-- SECTION END - Social -->

@@ -1,0 +1,200 @@
+[ {
+  "id" : "2e2b0615-2e44-4dbf-a30d-1e5bbda707ab",
+  "name" : "icons",
+  "label" : "Social icons",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 8,
+    "sorting_label_field" : "icons.network",
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "50075ad8-550e-413b-97a1-81b53780242c",
+    "name" : "network",
+    "label" : "Network",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "linkedin", "LinkedIn" ], [ "facebook", "Facebook" ], [ "youtube", "YouTube" ], [ "instagram", "Instagram" ], [ "tiktok", "TikTok" ], [ "pinterest", "Pinterest" ], [ "twitter", "X" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "linkedin"
+  }, {
+    "id" : "990c0066-0cc0-404c-971c-e5039a781b7e",
+    "name" : "icon_url",
+    "label" : "Icon link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "FILE", "EMAIL_ADDRESS", "CONTENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : "https://www.linkedin.com/company/nourish-care-systems"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "network" : "linkedin",
+    "icon_url" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : "https://www.linkedin.com/company/nourish-care-systems"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }, {
+    "network" : "facebook",
+    "icon_url" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : "https://www.facebook.com/nourishcare"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }, {
+    "network" : "youtube",
+    "icon_url" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : "https://www.youtube.com/@Nourish./featured"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }, {
+    "network" : "instagram",
+    "icon_url" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : "https://www.instagram.com/nourish_care/"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  } ]
+}, {
+  "id" : "55784614-ce90-49c5-8141-f90bba513590",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "97d5716f-a157-47af-8140-b9e28de9705f",
+    "name" : "section_bg_color",
+    "label" : "Section background color",
+    "help_text" : "Also used for the circle behind each icon.",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#0F1438",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "122e6d24-742f-49ee-a8b3-7f666a401653",
+    "name" : "section_padding_top",
+    "label" : "Section padding top (px)",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 0
+  }, {
+    "id" : "989992d3-56d0-4f2b-9d83-915f4abc6004",
+    "name" : "section_padding_bottom",
+    "label" : "Section padding bottom (px)",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 0
+  }, {
+    "id" : "01208998-9ab4-4e31-b464-c963b1c929ba",
+    "name" : "icon_color",
+    "label" : "Icon color",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "white", "White" ], [ "black", "Black" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "white"
+  }, {
+    "id" : "47f6b535-411a-43fb-95c4-2dc5f1ba5f7e",
+    "name" : "image_alignment",
+    "label" : "Icon alignment",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "center"
+  }, {
+    "id" : "fb1d23f7-c41f-4e41-9970-d536ac47a5f4",
+    "name" : "image_width",
+    "label" : "Icon size (px)",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 20,
+    "max" : 40,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 40
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "section_bg_color" : {
+      "color" : "#0F1438",
+      "opacity" : 100
+    },
+    "section_padding_top" : 0,
+    "section_padding_bottom" : 0,
+    "icon_color" : "white",
+    "image_alignment" : "center",
+    "image_width" : 40
+  }
+} ]

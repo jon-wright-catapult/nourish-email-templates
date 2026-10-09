@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "content_types" : [ "EMAIL" ],
+  "host_template_types" : [ "EMAIL" ],
+  "module_id" : 486676481263,
+  "label" : "Nourish - Social - Repeatable Icons",
+  "is_available_for_new_content" : true
+}

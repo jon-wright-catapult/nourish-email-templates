@@ -1,0 +1,113 @@
+{#
+  Nourish - Cards - CTA
+  Single card: rich text left (60%), button right (40%). All fields module-scope.
+#}
+
+{% set font_family = "Montserrat, Arial" %}
+
+{% set st          = module.styles %}
+{% set wrapper_bg  = st.wrapper_bg_color.color or "#ffffff" %}
+{% set pad_top     = st.wrapper_padding_top|int %}
+{% set pad_bottom  = st.wrapper_padding_bottom|int %}
+{% set card_bg     = st.card_bg_color.color or "#E0F5F5" %}
+{% set card_border = st.card_border_color.color or "#66CCCC" %}
+
+{% set btn_bg      = st.button_bg_color.color or "#66cccc" %}
+{% set btn_border  = st.button_border_color.color or btn_bg %}
+{% set btn_text    = st.button_text_color.color or "#ffffff" %}
+{% set btn_weight  = st.button_font_weight or "normal" %}
+{% set btn_align   = st.button_alignment or "left" %}
+{# .url.href = link field (current). The second lookup reads the pre-standardization
+   button group's url value on older instances; remove once none remain. #}
+{% set btn_href    = module.button_url.url.href or module.button.button_url.href or "#" %}
+{% set btn_cta     = module.button_cta_text or module.button.cta_text %}
+
+{# Button column content width: 211px Outlook column - 20px left padding. #}
+{% set max_btn_width = 190 %}
+{% set min_btn_width = 100 %}
+{% set btn_w = st.button_fixed_width|int %}
+{% if btn_w < 1 %}{% set btn_w = 190 %}{% endif %}
+{% if btn_w > max_btn_width %}{% set btn_w = max_btn_width %}{% endif %}
+{% if btn_w < min_btn_width %}{% set btn_w = min_btn_width %}{% endif %}
+{% if st.button_width_mode == "full" %}
+  {% set btn_table_w = "100%" %}{% set btn_a_w = "" %}
+{% else %}
+  {# anchor width = table width - 2 x 25px padding - 2 x 1px border #}
+  {% set btn_table_w = btn_w ~ "px" %}{% set btn_a_w = "width:" ~ (btn_w - 52) ~ "px;" %}
+{% endif %}
+
+<!-- SECTION START - 1 Card - CTA -->
+<!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" bgcolor="{{ wrapper_bg }}" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+<div style="background:{{ wrapper_bg }};background-color:{{ wrapper_bg }};margin:0px auto;max-width:600px;">
+  <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:{{ wrapper_bg }};background-color:{{ wrapper_bg }};width:100%;">
+    <tbody>
+      <tr>
+        <td style="direction:ltr;font-size:0px;padding:{{ pad_top }}px 30px {{ pad_bottom }}px 30px;text-align:center;">
+          <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" width="600px" ><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:540px;" width="540" bgcolor="{{ card_bg }}" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+          <div style="background:{{ card_bg }};background-color:{{ card_bg }};margin:0px auto;max-width:540px;border-radius:20px;overflow:hidden;">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:{{ card_bg }};background-color:{{ card_bg }};width:100%;border-collapse:separate;">
+              <tbody>
+                <tr>
+                  <td style="border:1px solid {{ card_border }};border-radius:20px;direction:ltr;font-size:0px;padding:5px;text-align:center;">
+                    <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:middle;width:317px;" ><![endif]-->
+                    <div class="mj-column-per-60 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:middle;width:100%;">
+                      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="border-collapse:separate;">
+                        <tbody>
+                          <tr>
+                            <td style="background-color:{{ card_bg }};border-radius:20px 0px 0px 20px;vertical-align:middle;border-collapse:separate;padding:20px 10px 20px 10px;">
+                              <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
+                                <tbody>
+                                  <tr>
+                                    <td align="left" style="font-size:0px;padding:0px;word-break:break-word;">
+                                      <div style="font-family:{{ font_family }};font-size:14px;font-weight:300;line-height:16px;text-align:left;color:#000000;">{{ module.card_text }}</div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!--[if mso | IE]></td><td class="" style="vertical-align:middle;width:211px;" ><![endif]-->
+                    <div class="mj-column-per-40 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:middle;width:100%;">
+                      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                        <tbody>
+                          <tr>
+                            <td style="background-color:{{ card_bg }};vertical-align:middle;padding:0px 0px 0px 0px;">
+                              <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
+                                <tbody>
+                                  <tr>
+                                    <td align="{{ btn_align }}" style="font-size:0px;padding:0px 0px 10px 0px;word-break:break-word;">
+                                      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;width:{{ btn_table_w }};line-height:100%;">
+                                        <tbody>
+                                          <tr>
+                                            <td align="center" bgcolor="{{ btn_bg }}" role="presentation" style="border:1px solid {{ btn_border }};border-radius:50px;cursor:auto;mso-padding-alt:10px 25px;background:{{ btn_bg }};" valign="middle">
+                                              <a href="{{ btn_href }}" style="display:inline-block;{{ btn_a_w }}background:{{ btn_bg }};color:{{ btn_text }};font-family:{{ font_family }};font-size:14px;font-weight:{{ btn_weight }};line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:50px;" target="_blank"> {{ btn_cta|escape }} </a>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!--[if mso | IE]></td></tr></table><![endif]-->
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--[if mso | IE]></td></tr></table></td></tr></table><![endif]-->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]-->
+<!-- SECTION END - 1 Card - CTA -->

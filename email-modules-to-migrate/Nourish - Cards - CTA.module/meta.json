@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "content_types" : [ "EMAIL" ],
+  "host_template_types" : [ "EMAIL" ],
+  "module_id" : 485869720823,
+  "label" : "Ready - Nourish - Cards - CTA",
+  "is_available_for_new_content" : true
+}

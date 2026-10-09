@@ -1,0 +1,192 @@
+{% set font_family = "FS Me, Arial" %}
+
+{# ---------- Section ---------- #}
+{% set s = module.styles %}
+{% set bg_color = s.section.section_bg_color.color or "#8826FF" %}
+{% set pad_top = s.section.section_padding_top|int %}
+{% set pad_bottom = s.section.section_padding_bottom|int %}
+
+{# ---------- Background image (mirrors mj-section background-* attributes) ---------- #}
+{% set bg_src = s.background.background_image.src %}
+
+{# background-position is stored x-first ("center bottom"); -x / -y override each half, as in MJML #}
+{% set pos_parts = (s.background.background_position or "center bottom")|split(" ") %}
+{% set pos_x = pos_parts[0] %}
+{% set pos_y = pos_parts[1] %}
+{% if s.background.background_position_x and s.background.background_position_x != "inherit" %}
+  {% set pos_x = s.background.background_position_x %}
+{% endif %}
+{% if s.background.background_position_y and s.background.background_position_y != "inherit" %}
+  {% set pos_y = s.background.background_position_y %}
+{% endif %}
+
+{% set bg_repeat = s.background.background_repeat or "no-repeat" %}
+
+{% if s.background.background_size == "custom" %}
+  {% set bg_size = (s.background.background_size_custom|int) ~ "px" %}
+{% else %}
+  {% set bg_size = s.background.background_size or "auto" %}
+{% endif %}
+
+{# Outlook VML equivalents, using MJML's conversion:
+   keyword -> 0 / 0.5 / 1; with no-repeat the value is offset by -0.5 #}
+{% if bg_repeat == "repeat" %}
+  {% set vml_map = {"left": "0", "top": "0", "center": "0.5", "right": "1", "bottom": "1"} %}
+  {% set vml_type = "tile" %}
+{% else %}
+  {% set vml_map = {"left": "-0.5", "top": "-0.5", "center": "0", "right": "0.5", "bottom": "0.5"} %}
+  {% set vml_type = "frame" %}
+{% endif %}
+{% set vml_pos = vml_map[pos_x] ~ ", " ~ vml_map[pos_y] %}
+
+{% if bg_size == "cover" %}
+  {% set vml_size_attrs = 'size="1,1" aspect="atleast"' %}
+{% elif bg_size == "contain" %}
+  {% set vml_size_attrs = 'size="1,1" aspect="atmost"' %}
+{% elif bg_size == "auto" %}
+  {# no size given: 'frame' would stretch the image to the section, so tile it at natural size #}
+  {% set vml_size_attrs = '' %}
+  {% set vml_type = "tile" %}
+{% else %}
+  {% set vml_size_attrs = 'size="' ~ bg_size ~ '" aspect="atmost"' %}
+{% endif %}
+
+{# ---------- Header ---------- #}
+{% set header_align = s.header.header_alignment or "left" %}
+{% set header_font_size = s.header.header_font_size|int %}
+{% set header_line_height = header_font_size + 2 %}
+
+{# ---------- Body text ---------- #}
+{% set body_color = s.body_text.body_text_color.color or "#FBFAF9" %}
+{% set intro_pad_bottom = s.body_text.rich_text_bottom_padding_bottom|int %}
+
+{# ---------- Button ---------- #}
+{% set b = s.button %}
+{% set max_btn_width = 450 %}
+{% set btn_w = b.button_fixed_width|int %}
+{% if not btn_w or btn_w > max_btn_width or btn_w < 1 %}
+  {% set btn_w = max_btn_width %}
+{% endif %}
+{% set btn_anchor_w = btn_w - 50 %}
+
+<!-- SECTION START - Header-->
+{% if bg_src %}
+    <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="mobile-section-padding-outlook" role="presentation" style="width:600px;" width="600" bgcolor="{{ bg_color }}" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><v:rect style="width:600px;" xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false"><v:fill origin="{{ vml_pos }}" position="{{ vml_pos }}" src="{{ bg_src|escape_attr }}" color="{{ bg_color }}" type="{{ vml_type }}" {{ vml_size_attrs }} /><v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0"><![endif]-->
+    <div class="mobile-section-padding" style="background:{{ bg_color }} url('{{ bg_src|escape_attr }}') {{ pos_x }} {{ pos_y }} / {{ bg_size }} {{ bg_repeat }};background-position:{{ pos_x }} {{ pos_y }};background-repeat:{{ bg_repeat }};background-size:{{ bg_size }};margin:0px auto;max-width:600px;">
+      <div style="line-height:0;font-size:0;">
+        <table align="center" background="{{ bg_src|escape_attr }}" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:{{ bg_color }} url('{{ bg_src|escape_attr }}') {{ pos_x }} {{ pos_y }} / {{ bg_size }} {{ bg_repeat }};background-position:{{ pos_x }} {{ pos_y }};background-repeat:{{ bg_repeat }};background-size:{{ bg_size }};width:100%;">
+{% else %}
+    <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="mobile-section-padding-outlook" role="presentation" style="width:600px;" width="600" bgcolor="{{ bg_color }}" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+    <div class="mobile-section-padding" style="background:{{ bg_color }};background-color:{{ bg_color }};margin:0px auto;max-width:600px;">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:{{ bg_color }};background-color:{{ bg_color }};width:100%;">
+{% endif %}
+          <tbody>
+            <tr>
+              <td style="direction:ltr;font-size:0px;padding:{{ pad_top }}px 0px {{ pad_bottom }}px 0px;text-align:center;">
+                <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:30px;" ><![endif]-->
+                <div class="mj-column-per-5 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+                  <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                    <tbody>
+                      <tr>
+                        <td style="vertical-align:top;padding:0px;">
+                          <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
+                            <tbody>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!--[if mso | IE]></td><td class="" style="vertical-align:top;width:450px;" ><![endif]-->
+                <div class="mj-column-per-75 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+                  <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                    <tbody>
+                      <tr>
+                        <td style="vertical-align:top;padding:0px;">
+                          <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
+                            <tbody>
+                              {% if module.header_text %}
+                              <tr>
+                                <td align="{{ header_align }}" style="font-size:0px;padding:20px 0px 0px;word-break:break-word;">
+                                  <div style="font-family:{{ font_family }};font-size:{{ header_font_size }}px;font-weight:700;line-height:{{ header_line_height }}px;text-align:{{ header_align }};color:{{ s.header.header_text_color.color }};">{{ module.header_text|escape }}</div>
+                                </td>
+                              </tr>
+                              {% endif %}
+                              {% if module.show_rich_text_top and module.rich_text_top %}
+                              <tr>
+                                <td align="left" style="font-size:0px;padding:20px 0px 10px;word-break:break-word;">
+                                  <div style="font-family:{{ font_family }};font-size:24px;font-weight:400;line-height:26px;text-align:left;color:{{ body_color }};">{{ module.rich_text_top }}</div>
+                                </td>
+                              </tr>
+                              {% endif %}
+                              {% if module.show_button and module.button_cta_text %}
+                              <tr>
+                                <td align="{{ b.button_alignment or 'left' }}" style="font-size:0px;padding:20px 0px 10px;word-break:break-word;">
+                                  {% if b.button_width_mode == "full" %}
+                                  <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;width:100%;line-height:100%;">
+                                    <tbody>
+                                      <tr>
+                                        <td align="center" bgcolor="{{ b.button_bg_color.color }}" role="presentation" style="border:1px solid {{ b.button_border_color.color }};border-radius:50px;cursor:auto;mso-padding-alt:10px 25px;background:{{ b.button_bg_color.color }};" valign="middle">
+                                          <a href="{{ module.button_url.url.href|escape_attr }}" style="display:inline-block;background:{{ b.button_bg_color.color }};color:{{ b.button_text_color.color }};font-family:{{ font_family }};font-size:14px;font-weight:{{ b.button_font_weight }};line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:50px;" target="_blank"> {{ module.button_cta_text }} </a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  {% else %}
+                                  <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;width:{{ btn_w }}px;line-height:100%;">
+                                    <tbody>
+                                      <tr>
+                                        <td align="center" bgcolor="{{ b.button_bg_color.color }}" role="presentation" style="border:1px solid {{ b.button_border_color.color }};border-radius:50px;cursor:auto;mso-padding-alt:10px 25px;background:{{ b.button_bg_color.color }};" valign="middle">
+                                          <a href="{{ module.button_url.url.href|escape_attr }}" style="display:inline-block;width:{{ btn_anchor_w }}px;background:{{ b.button_bg_color.color }};color:{{ b.button_text_color.color }};font-family:{{ font_family }};font-size:14px;font-weight:{{ b.button_font_weight }};line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:50px;" target="_blank"> {{ module.button_cta_text }} </a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  {% endif %}
+                                </td>
+                              </tr>
+                              {% endif %}
+                              {% if module.show_rich_text_bottom and module.rich_text_bottom %}
+                              <tr>
+                                <td align="left" style="font-size:0px;padding:0px 0px {{ intro_pad_bottom }}px;word-break:break-word;">
+                                  <div style="font-family:{{ font_family }};font-size:14px;font-weight:300;line-height:18px;text-align:left;color:{{ body_color }};">{{ module.rich_text_bottom }}</div>
+                                </td>
+                              </tr>
+                              {% endif %}
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!--[if mso | IE]></td><td class="" style="vertical-align:top;width:120px;" ><![endif]-->
+                <div class="mj-column-per-20 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+                  <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                    <tbody>
+                      <tr>
+                        <td style="vertical-align:top;padding:0px;">
+                          <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
+                            <tbody>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+{% if bg_src %}
+      </div>
+    </div>
+    <!--[if mso | IE]></v:textbox></v:rect></td></tr></table><![endif]-->
+{% else %}
+    </div>
+    <!--[if mso | IE]></td></tr></table><![endif]-->
+{% endif %}
+<!-- SECTION END - Header-->

@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "content_types" : [ "EMAIL" ],
+  "host_template_types" : [ "EMAIL" ],
+  "module_id" : 485891223749,
+  "label" : "Ready - Nourish - Buttons - 1-2 columns",
+  "is_available_for_new_content" : true
+}

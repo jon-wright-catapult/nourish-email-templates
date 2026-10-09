@@ -1,0 +1,268 @@
+[ {
+  "id" : "cd737b46-e2ed-46bc-b08c-2d91cf3f1ad3",
+  "name" : "image",
+  "label" : "Logo",
+  "required" : false,
+  "locked" : false,
+  "aliases_mapping" : {
+    "property_aliases_paths" : {
+      "image" : [ "logo" ]
+    }
+  },
+  "responsive" : false,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "src" : "https://149327226.fs1.hubspotusercontent-eu1.net/hub/149327226/hubfs/nourish-logo-white.png?width=400&upscale=true&name=nourish-logo-white.png",
+    "alt" : "",
+    "loading" : "disabled"
+  }
+}, {
+  "id" : "2bb53aee-03ab-4acb-85fc-03aa09f49620",
+  "name" : "image_link_url",
+  "label" : "Logo link URL (optional)",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "FILE", "EMAIL_ADDRESS", "CONTENT" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : ""
+    },
+    "open_in_new_tab" : true,
+    "no_follow" : false
+  }
+}, {
+  "id" : "9eaf0c11-a995-44d7-b2ae-8224ff97a284",
+  "name" : "nav_items",
+  "label" : "Nav links",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 4,
+    "sorting_label_field" : "nav_items.link_text",
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "ef2b55a1-403c-46c9-bf12-7c7bb2957a55",
+    "name" : "link_text",
+    "label" : "Link text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Link"
+  }, {
+    "id" : "89b4bd62-d1e8-4c8f-91c7-1001510c70a7",
+    "name" : "link_url",
+    "label" : "Link URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "FILE", "EMAIL_ADDRESS", "CONTENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "eca94bdd-cbd3-4b5b-90a6-1358c6101f34",
+    "name" : "text_color",
+    "label" : "Text color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "8156109f-0972-48e8-9ca7-53dd95b52c99",
+    "name" : "text_decoration",
+    "label" : "Text decoration",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "none", "None" ], [ "underline", "Underline" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "none"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "link_text" : "Agenda",
+    "link_url" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : "https://mjml.io/gettings-started-onboard"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    },
+    "text_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "text_decoration" : "none"
+  }, {
+    "link_text" : "Speakers",
+    "link_url" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : "https://mjml.io/try-it-live"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    },
+    "text_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "text_decoration" : "none"
+  }, {
+    "link_text" : "Register",
+    "link_url" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : "https://mjml.io/templates"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    },
+    "text_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "text_decoration" : "none"
+  } ]
+}, {
+  "id" : "df47f168-2695-4495-9c82-dde1bf1bb7f5",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "8b8dd726-c558-4efb-892c-efbca653c898",
+    "name" : "section_bg_color",
+    "label" : "Section background color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "section_bg_color" : [ "bg_color" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#172b34",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "f3bbfd90-eb7a-483c-aaef-5908dcc56cd8",
+    "name" : "section_padding_top",
+    "label" : "Section padding top (px)",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "section_padding_top" : [ "padding_top" ]
+      }
+    },
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 10
+  }, {
+    "id" : "d9ef4db2-efc6-4d71-b83a-ff135a67cab0",
+    "name" : "section_padding_bottom",
+    "label" : "Section padding bottom (px)",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "section_padding_bottom" : [ "padding_bottom" ]
+      }
+    },
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 10
+  }, {
+    "id" : "d1b61c3f-d46a-4248-a72f-0890242f7c8f",
+    "name" : "image_alignment",
+    "label" : "Logo alignment",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "center"
+  }, {
+    "id" : "187861a2-8467-4a5a-9117-d8c5e2cd9c06",
+    "name" : "image_width",
+    "label" : "Logo width (px, max 200)",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 20,
+    "max" : 200,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 200
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "section_bg_color" : {
+      "color" : "#172b34",
+      "opacity" : 100
+    },
+    "section_padding_top" : 10,
+    "section_padding_bottom" : 10,
+    "image_alignment" : "center",
+    "image_width" : 200
+  }
+} ]

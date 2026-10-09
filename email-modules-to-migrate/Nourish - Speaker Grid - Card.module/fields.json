@@ -1,0 +1,411 @@
+[ {
+  "id" : "4a553a54-b7f7-479b-a164-50071d913e1b",
+  "name" : "speakers",
+  "label" : "Speakers",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 12,
+    "sorting_label_field" : "speakers.last_name",
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "7ed721bd-5328-4818-acfd-55f3ea084270",
+    "name" : "photo",
+    "label" : "Photo",
+    "required" : false,
+    "locked" : false,
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "alt" : "",
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "8dd40a87-3541-4934-82d4-6d857de373f6",
+    "name" : "photo_link_url",
+    "label" : "Photo link URL (optional)",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "FILE", "EMAIL_ADDRESS", "CONTENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "df07db90-e50a-4fa1-a4a4-c0b0020c7f28",
+    "name" : "first_name",
+    "label" : "First name",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "First"
+  }, {
+    "id" : "66533d75-10b2-4c92-8405-df7253475178",
+    "name" : "last_name",
+    "label" : "Last name",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Last"
+  }, {
+    "id" : "18b38a3c-8ff6-4cd5-b1aa-79c4ec3203d6",
+    "name" : "job_title",
+    "label" : "Job title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Job title"
+  }, {
+    "id" : "207b42cf-5842-42f8-8214-cf23e57e6b9c",
+    "name" : "company_display_type",
+    "label" : "Company display",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "logo", "Logo" ], [ "text", "Text" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "text"
+  }, {
+    "id" : "7d9753d7-9ea5-4ea8-9465-fbb384fb64cb",
+    "name" : "company_logo",
+    "label" : "Company logo",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "speakers.company_display_type",
+      "controlling_value_regex" : "logo",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "alt" : "",
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "419682e7-a6e0-4125-b7ea-2b028b15b192",
+    "name" : "company_logo_link_url",
+    "label" : "Company logo link URL (optional)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "speakers.company_display_type",
+      "controlling_value_regex" : "logo",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "FILE", "EMAIL_ADDRESS", "CONTENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "5834babc-8186-41d8-b43a-737cc9b11316",
+    "name" : "company_name",
+    "label" : "Company name",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "speakers.company_display_type",
+      "controlling_value_regex" : "text",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Company Name"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "photo" : {
+      "src" : "",
+      "alt" : "",
+      "loading" : "disabled"
+    },
+    "photo_link_url" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    },
+    "first_name" : "First",
+    "last_name" : "Last",
+    "job_title" : "Job title",
+    "company_display_type" : "text",
+    "company_logo" : {
+      "src" : "",
+      "alt" : "",
+      "loading" : "disabled"
+    },
+    "company_logo_link_url" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    },
+    "company_name" : "Company Name"
+  } ]
+}, {
+  "id" : "c56dec40-2478-46f5-a7d3-cd8a1e7a77d4",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "297675ca-c254-4083-a9fe-b58ccebf8d87",
+    "name" : "wrapper_bg_color",
+    "label" : "Wrapper background color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "wrapper_bg_color" : [ "wrapper_bg_color" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#FFFFFF",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "a2ac9025-35df-4a88-bc0b-25dfb8d27d74",
+    "name" : "wrapper_padding_top",
+    "label" : "Wrapper padding top (px)",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 10
+  }, {
+    "id" : "ada44d42-4300-4b98-a3cf-905f5d03c95d",
+    "name" : "wrapper_padding_bottom",
+    "label" : "Wrapper padding bottom (px)",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 20
+  }, {
+    "id" : "eccf0c11-1795-4dfb-937e-1e6956d5e39b",
+    "name" : "card_bg_color",
+    "label" : "Card background color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "card_bg_color" : [ "section_bg_color" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#e0f5f5",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "057071fd-1b48-4593-805b-60c1cc046c99",
+    "name" : "card_border_color",
+    "label" : "Card border color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "card_border_color" : [ "section_border_color" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "5dd962de-63aa-4866-9cf7-8092602edae4",
+    "name" : "speaker_text_color",
+    "label" : "Speaker text color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "speaker_text_color" : [ "speaker_text_color" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#000000",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "9c04d1a7-1050-43c6-84f5-e42214c8af87",
+    "name" : "speaker_alignment",
+    "label" : "Speaker alignment",
+    "help_text" : "Controls how speakers are positioned within each row when there are fewer than 4 in that row.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "speaker_alignment" : [ "alignment" ]
+      }
+    },
+    "choices" : [ [ "left", "Left" ], [ "center", "Center" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "center"
+  }, {
+    "id" : "4dc6db4b-f7f5-4d38-a8e9-11f032734c1e",
+    "name" : "photo_alignment",
+    "label" : "Photo alignment",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "center"
+  }, {
+    "id" : "aec1d8a9-a440-41b3-9603-c77f11c9c575",
+    "name" : "photo_width",
+    "label" : "Photo width (px, max 117)",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 20,
+    "max" : 117,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 117
+  }, {
+    "id" : "c1ec08e7-7db5-439d-aa74-4a9eda947cc6",
+    "name" : "company_logo_alignment",
+    "label" : "Company logo alignment",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "center"
+  }, {
+    "id" : "181e9974-43c3-4567-9586-5195d82bafe1",
+    "name" : "company_logo_width",
+    "label" : "Company logo width (px, max 100)",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 20,
+    "max" : 100,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 100
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "wrapper_bg_color" : {
+      "color" : "#FFFFFF",
+      "opacity" : 100
+    },
+    "wrapper_padding_top" : 10,
+    "wrapper_padding_bottom" : 20,
+    "card_bg_color" : {
+      "color" : "#e0f5f5",
+      "opacity" : 100
+    },
+    "card_border_color" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    },
+    "speaker_text_color" : {
+      "color" : "#000000",
+      "opacity" : 100
+    },
+    "speaker_alignment" : "center",
+    "photo_alignment" : "center",
+    "photo_width" : 117,
+    "company_logo_alignment" : "center",
+    "company_logo_width" : 100
+  }
+} ]

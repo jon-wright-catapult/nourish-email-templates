@@ -1,0 +1,63 @@
+{% set font_family = "Montserrat, Arial" %}
+
+{% set s = module.styles %}
+{% set bg_color = s.section_bg_color.color or "#004038" %}
+{% set pad_top = s.section_padding_top|int %}
+{% set pad_bottom = s.section_padding_bottom|int %}
+{% set text_color = s.text_color.color or "#FFFFFF" %}
+{% set link_style = "color:" ~ text_color ~ ";text-decoration:underline;" %}
+
+{# Which unsubscribe links to show: unsubscribe (all) / manage (preferences) / both #}
+{% set unsub_type = module.unsubscribe_link_type or "both" %}
+{% set show_unsub_all = unsub_type in ["unsubscribe", "both"] %}
+{% set show_manage = unsub_type in ["manage", "both"] %}
+
+{# Address from account settings: join only the parts that are filled in #}
+{% set address_parts = [] %}
+{% for part in [site_settings.company_street_address_1, site_settings.company_street_address_2, site_settings.company_city, site_settings.company_state, site_settings.company_zip] %}
+  {% if part %}{% do address_parts.append(part) %}{% endif %}
+{% endfor %}
+
+<!-- SECTION START - Footer-->
+    <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" bgcolor="{{ bg_color }}" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+    <div style="background:{{ bg_color }};background-color:{{ bg_color }};margin:0px auto;max-width:600px;">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:{{ bg_color }};background-color:{{ bg_color }};width:100%;">
+        <tbody>
+          <tr>
+            <td style="direction:ltr;font-size:0px;padding:{{ pad_top }}px 10px {{ pad_bottom }}px;text-align:center;">
+              <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:580px;" ><![endif]-->
+              <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+                <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                  <tbody>
+                    <tr>
+                      <td style="vertical-align:top;padding:0px;">
+                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
+                          <tbody>
+                            <tr>
+                              <td align="center" style="font-size:0px;padding:0px 10px 0px 10px;word-break:break-word;">
+                                <div style="font-family:{{ font_family }};font-size:14px;line-height:20px;text-align:center;color:{{ text_color }};">
+                                  {% if show_unsub_all %}<a href="{{ unsubscribe_link_all }}" style="{{ link_style }}">{{ module.unsubscribe_link_text or "Unsubscribe" }}</a>{% endif %}{% if show_unsub_all and show_manage %} &nbsp;|&nbsp; {% endif %}{% if show_manage %}<a href="{{ unsubscribe_link }}" style="{{ link_style }}">{{ module.manage_preferences_link_text or "Manage preferences" }}</a>{% endif %}
+                                  <p>{{ site_settings.company_name }}{% if address_parts %}: {{ address_parts|join(", ") }}{% endif %}</p>
+                                  {% if module.show_view_as_page %}
+                                  <p>
+                                    <a href="{{ view_as_page_url }}" style="{{ link_style }}">{{ module.view_as_page_text or "View this email as webpage" }}</a>
+                                  </p>
+                                  {% endif %}
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!--[if mso | IE]></td></tr></table><![endif]-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--[if mso | IE]></td></tr></table><![endif]-->
+<!-- SECTION END - Footer-->

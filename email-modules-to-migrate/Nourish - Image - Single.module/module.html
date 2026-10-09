@@ -1,0 +1,60 @@
+{% set font_family = "Montserrat, Arial" %}
+{% set section_bg = module.styles.section_bg_color.color or "#FBFAF9" %}
+{% set pad_top = module.styles.section_padding_top or 0 %}
+{% set pad_bottom = module.styles.section_padding_bottom or 0 %}
+{% set pad_left = module.styles.section_padding_left or 0 %}
+{% set pad_right = module.styles.section_padding_right or 0 %}
+{% set content_width = 600 - pad_left - pad_right %}
+{% set img_w = module.styles.image_width %}
+{% if not img_w or img_w > content_width or img_w < 1 %}
+  {% set img_w = content_width %}
+{% endif %}
+{% set img_align = module.styles.image_alignment or "center" %}
+{% set img_href = module.image_link_url.url.href %}
+<!-- SECTION START - IMAGE SINGLE -->
+<!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" bgcolor="{{ section_bg }}" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+<div style="background:{{ section_bg }};background-color:{{ section_bg }};margin:0px auto;max-width:600px;">
+  <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:{{ section_bg }};background-color:{{ section_bg }};width:100%;">
+    <tbody>
+      <tr>
+        <td style="direction:ltr;font-size:0px;padding:{{ pad_top }}px {{ pad_right }}px {{ pad_bottom }}px {{ pad_left }}px;text-align:center;">
+          <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:{{ content_width }}px;" ><![endif]-->
+          <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+            <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+              <tbody>
+                <tr>
+                  <td style="vertical-align:top;padding:0px;">
+                    <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
+                      <tbody>
+                        {% if module.image.src %}
+                        <tr>
+                          <td align="{{ img_align }}" style="font-size:0px;padding:0px 0px;word-break:break-word;">
+                            <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;">
+                              <tbody>
+                                <tr>
+                                  <td style="width:{{ img_w }}px;">
+                                    {% if img_href %}<a href="{{ img_href }}" target="_blank" style="text-decoration:none;">{% endif %}
+                                      <img alt="{{ module.image.alt|escape_attr }}" src="{{ module.image.src|escape_attr }}" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-family:{{ font_family }};font-size:14px;" width="{{ img_w }}" height="auto" />
+                                    {% if img_href %}</a>{% endif %}
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                        {% endif %}
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]-->
+<!-- SECTION END - IMAGE SINGLE -->

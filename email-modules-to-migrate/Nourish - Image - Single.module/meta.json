@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "content_types" : [ "EMAIL" ],
+  "host_template_types" : [ "EMAIL" ],
+  "module_id" : 487692667071,
+  "label" : "Nourish - Image - Single",
+  "is_available_for_new_content" : true
+}

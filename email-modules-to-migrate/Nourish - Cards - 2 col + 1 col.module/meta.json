@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "content_types" : [ "EMAIL" ],
+  "host_template_types" : [ "EMAIL" ],
+  "module_id" : 485697827044,
+  "label" : "Ready - Nourish - Cards - 2 col + 1 col",
+  "is_available_for_new_content" : true
+}

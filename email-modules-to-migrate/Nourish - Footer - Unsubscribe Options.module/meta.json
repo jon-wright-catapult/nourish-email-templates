@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "content_types" : [ "EMAIL" ],
+  "host_template_types" : [ "EMAIL" ],
+  "module_id" : 486688112875,
+  "label" : "Nourish - Footer - Unsubscribe Options",
+  "is_available_for_new_content" : true
+}

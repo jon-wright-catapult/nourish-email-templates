@@ -1,0 +1,619 @@
+[ {
+  "id" : "0949be8d-f50e-483e-9d96-c8cf8e6f47b3",
+  "name" : "items",
+  "label" : "Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : "items.button_cta_text",
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "b4c77ca8-e80d-405d-b915-d387cb120245",
+    "name" : "show_rich_text",
+    "label" : "Show text",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "79dac764-eb4d-4f03-8746-4f1f3ab17d44",
+    "name" : "rich_text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_rich_text",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p><span style=\"font-size:18px;font-weight:600\">The role of civic and business leadership in unlocking connectivity and growth in city regions</span></p><p>We will explore how place-based leadership, strategic investment, and partnerships with high-potential businesses can unlock long-term prosperity</p><p><b>Featuring</b>: Andrew Carter, Chief Executive, Centre for Cities ● Kellie Beirne, Chief Executive, Cardiff Capital Region ● Rokhsana Fiaz OBE, Mayor of Newham, Newham Council</p>"
+  }, {
+    "id" : "b0453832-7520-4553-8f13-fcc2f9a057c4",
+    "name" : "show_image",
+    "label" : "Show image",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "82f43f76-8c95-425d-9447-c753c8fcba8f",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_image",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "https://summit.cp.catapult.org.uk/hubfs/summit-2026-keynote-day-1-session-2.png",
+      "alt" : "",
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "ae5e086e-f33b-ba01-35df-39a287e41cb4",
+    "name" : "link_image",
+    "label" : "Link Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_image",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "d77a3a0c-11cc-430c-9e51-21e884fa13dd",
+    "name" : "image_link_url",
+    "label" : "Image link URL (optional)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.link_image",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "FILE", "EMAIL_ADDRESS", "CONTENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "2c9610ce-0e21-4c5f-ad6d-182839c1d04c",
+    "name" : "image_alignment",
+    "label" : "Image alignment",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_image",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "left"
+  }, {
+    "id" : "ddcd73a0-d586-4924-a0aa-cbac9caa815a",
+    "name" : "image_width",
+    "label" : "Image width (px, max 488)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_image",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "slider",
+    "min" : 20,
+    "max" : 488,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 400
+  }, {
+    "id" : "1cdf2a0c-2d5b-4ade-9341-8b2f7106b083",
+    "name" : "show_button",
+    "label" : "Show button",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "5cb517e4-bc79-43bd-8d59-58d602f4f2e3",
+    "name" : "button_cta_text",
+    "label" : "Button CTA text",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "button_cta_text" : [ "button_text" ]
+      }
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Save your place"
+  }, {
+    "id" : "828418ef-96fe-4b4b-a10f-7f65faaaf79b",
+    "name" : "button_url",
+    "label" : "Button URL",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "FILE", "EMAIL_ADDRESS", "CONTENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : "https://nourishcare.com/"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "b7bc2048-45b4-4624-b503-401383638a1c",
+    "name" : "button_alignment",
+    "label" : "Button alignment",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "left"
+  }, {
+    "id" : "e8f4154e-052c-4f87-8fe6-4a8431c0c511",
+    "name" : "button_width_mode",
+    "label" : "Button width",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "full", "Full width" ], [ "fixed", "Fixed width" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "fixed"
+  }, {
+    "id" : "95c15758-194a-404f-8f10-a5b1d1622c82",
+    "name" : "button_fixed_width",
+    "label" : "Button fixed width (px, max 488)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.button_width_mode",
+      "controlling_value_regex" : "fixed",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "slider",
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "button_fixed_width" : [ "button_width" ]
+      }
+    },
+    "min" : 100,
+    "max" : 488,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 240
+  }, {
+    "id" : "c10fa8b3-e3f2-4761-8c2c-e957e1bcae23",
+    "name" : "button_bg_color",
+    "label" : "Button background color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "185a18e3-437d-4515-965c-37947c482e02",
+    "name" : "button_text_color",
+    "label" : "Button text color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "68b05b55-59be-490e-98d5-ac063958c5ae",
+    "name" : "button_border_color",
+    "label" : "Button border color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#0A1414",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "d6f247b7-257b-4906-8b86-ef2828b146b4",
+    "name" : "button_font_weight",
+    "label" : "Button font weight",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "normal", "Normal" ], [ "bold", "Bold" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "normal"
+  }, {
+    "id" : "e0195cb3-4d77-4d49-aa64-c21c273af534",
+    "name" : "button_border_radius",
+    "label" : "Button border radius (px)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "slider",
+    "min" : 0,
+    "max" : 50,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 50
+  }, {
+    "id" : "5345ea7b-8aed-4fa9-8515-f05aa27ef0b6",
+    "name" : "show_divider",
+    "label" : "Show divider",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "5d218896-7330-4dd1-ba2e-7b85a2d45cbf",
+    "name" : "divider_style",
+    "label" : "Divider style",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_divider",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "dotted", "Dotted" ], [ "dashed", "Dashed" ], [ "solid", "Solid" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "solid"
+  }, {
+    "id" : "21498230-dc89-41a7-a650-c948efed0dae",
+    "name" : "divider_color",
+    "label" : "Divider color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.show_divider",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "show_rich_text" : true,
+    "rich_text" : "<p><span style=\"font-size:18px;font-weight:600\">The role of civic and business leadership in unlocking connectivity and growth in city regions</span></p><p>We will explore how place-based leadership, strategic investment, and partnerships with high-potential businesses can unlock long-term prosperity</p><p><b>Featuring</b>: Andrew Carter, Chief Executive, Centre for Cities ● Kellie Beirne, Chief Executive, Cardiff Capital Region ● Rokhsana Fiaz OBE, Mayor of Newham, Newham Council</p>",
+    "show_image" : true,
+    "image" : {
+      "src" : "https://summit.cp.catapult.org.uk/hubfs/summit-2026-keynote-day-1-session-2.png",
+      "alt" : "",
+      "loading" : "disabled"
+    },
+    "image_link_url" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    },
+    "image_alignment" : "left",
+    "image_width" : 400,
+    "show_button" : true,
+    "button_cta_text" : "Save your place",
+    "button_url" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : "https://nourishcare.com/"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    },
+    "button_alignment" : "left",
+    "button_width_mode" : "fixed",
+    "button_fixed_width" : 240,
+    "button_bg_color" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    },
+    "button_text_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "button_border_color" : {
+      "color" : "#0A1414",
+      "opacity" : 100
+    },
+    "button_font_weight" : "normal",
+    "button_border_radius" : 50,
+    "show_divider" : true,
+    "divider_style" : "solid",
+    "divider_color" : {
+      "color" : "#66cccc",
+      "opacity" : 100
+    },
+    "boolean_field" : false
+  } ]
+}, {
+  "id" : "b5c96ffa-f83e-4899-9259-53cfb2d46eaa",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "75000b40-aab4-4eff-b687-ad8557564761",
+    "name" : "wrapper_bg_color",
+    "label" : "Wrapper background color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "wrapper_bg_color" : [ "wrapper_bg" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "320c4007-c01f-4e4f-8e2c-746f51542302",
+    "name" : "wrapper_padding_top",
+    "label" : "Wrapper padding top (px)",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 10
+  }, {
+    "id" : "bcfe5fa9-dab2-4107-810c-66adcdf02d5b",
+    "name" : "wrapper_padding_bottom",
+    "label" : "Wrapper padding bottom (px)",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 100,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 20
+  }, {
+    "id" : "3bae72ba-2002-43c6-9f5d-0c7be8e70618",
+    "name" : "card_bg_color",
+    "label" : "Card background color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "card_bg_color" : [ "section_bg" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#E0F5F5",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "6daac8f3-bbb5-4c1e-a7c8-0c31fa5d669a",
+    "name" : "card_border_color",
+    "label" : "Card border color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "card_border_color" : [ "section_border" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#66CCCC",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "wrapper_bg_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "wrapper_padding_top" : 10,
+    "wrapper_padding_bottom" : 20,
+    "card_bg_color" : {
+      "color" : "#E0F5F5",
+      "opacity" : 100
+    },
+    "card_border_color" : {
+      "color" : "#66CCCC",
+      "opacity" : 100
+    }
+  }
+} ]

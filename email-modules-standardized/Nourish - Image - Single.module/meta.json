@@ -1,0 +1,13 @@
+{
+  "label": "Nourish - Image - Single",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "A single image, optionally linked, with editable section background, padding, image width and alignment.",
+  "host_template_types": ["EMAIL"],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "is_available_for_new_content": true
+}
